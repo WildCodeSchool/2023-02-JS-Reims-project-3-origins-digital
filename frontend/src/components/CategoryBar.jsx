@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CategoryBar.css";
 
 function CategoryBar() {
@@ -9,12 +10,17 @@ function CategoryBar() {
     { name: "Swimming", icon: "pool" },
     { name: "Hockey", icon: "sports_hockey" },
   ];
+
   return (
     <div className="category-bar">
       {sports.map((sport) => (
-        <button type="button" key={sport.name} className="category-button">
+        <Link
+          key={sport.name}
+          className="category-button"
+          to={`/category/${sport.name}`}
+        >
           <span className="material-icons">{sport.icon}</span>
-        </button>
+        </Link>
       ))}
     </div>
   );

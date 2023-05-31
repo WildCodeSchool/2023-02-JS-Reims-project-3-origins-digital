@@ -15,6 +15,7 @@
   background: none;
   color: white;
   font-size: 1em;  /* 16px */
+  cursor:pointer;
 }
 
 /* Desktop styles */
