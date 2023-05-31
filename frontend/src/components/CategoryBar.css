@@ -2,7 +2,7 @@
 .category-bar {
   display: flex;
   justify-content: space-around;
-  position: fixed;
+  position: sticky;
   bottom: 0;
   width: 100%;
   background: black;

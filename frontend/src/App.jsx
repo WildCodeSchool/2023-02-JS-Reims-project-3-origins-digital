@@ -9,10 +9,10 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <CategoryBar />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
         </Routes>
+        <CategoryBar />
       </Router>
     </div>
   );
