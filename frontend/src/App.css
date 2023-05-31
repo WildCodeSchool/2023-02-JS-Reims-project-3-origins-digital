@@ -1,7 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color:white;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.headerLogo{
+  height: 4rem;
+}
+
 .video-item {
   align-items: center;
-  justify-content: center;
-  margin: auto;
-  max-width: 800px; /* Ajustez la largeur maximale selon vos besoins */
+  height: 4rem;
+  max-width: 800px;
   padding: 20px;
 }
