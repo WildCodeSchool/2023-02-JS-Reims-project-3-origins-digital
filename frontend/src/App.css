@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: black;
-  color:white;
+  color: white;
 }
 
 .header {
@@ -188,3 +188,4 @@ section {
   .footer-distributed form button {
     float: none;
   }
+}
