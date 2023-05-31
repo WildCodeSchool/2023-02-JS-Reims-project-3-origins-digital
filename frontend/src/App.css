@@ -16,7 +16,7 @@ body {
   height: 4rem;
 }
 
-/*  ----  FOOTER     ----- */
+/* ---- FOOTER ----- */
 
 .footer-distributed {
   background: #444;
@@ -27,23 +27,18 @@ body {
   text-align: left;
   padding: 3em 4em 2em;
   overflow: hidden;
-  position: absolute;
+  position: sticky;
   bottom: 0;
 }
 
 section {
-  width: 100%;
   display: inline-block;
   background: #ccc;
-  height: 60vh;
+  height: 9em;
   text-align: center;
   font-size: 22px;
   font-weight: 700;
   text-decoration: underline;
-}
-
-.footer-distributed .footer-left {
-  float: left;
 }
 
 .footer-distributed h3 {
@@ -85,10 +80,6 @@ section {
   text-align: center;
 }
 
-.footer-distributed .footer-right {
-  float: right;
-}
-
 .footer-distributed .footer-right p {
   display: inline-block;
   vertical-align: top;
@@ -113,7 +104,7 @@ section {
   font-size: 1em;
   font-weight: normal;
   color: #d1d2d2;
-  width: 25em;
+  width: 100%;
   padding: 1em;
 }
 
@@ -134,43 +125,25 @@ section {
   border: 0;
   padding: 1em 4em;
   font-weight: bold;
-  float: right;
+  width: 100%;
+  margin-top: 1em;
 }
 
 .logoFooter {
-  width: 3.5em;
-  height: 2em;
+  width: 5em;
 }
 
-@media (max-width: 1000px) {
+@media (min-width: 800px) {
   .footer-distributed {
     font: bold 14px sans-serif;
-  }
-
-  .footer-distributed .footer-company-name {
-    font-size: 12px;
-  }
-
-  .footer-distributed form input,
-  .footer-distributed form textarea {
-    width: 250px;
-  }
-
-  .footer-distributed form button {
-    padding: 10px 35px;
-  }
-}
-
-@media (max-width: 800px) {
-  .footer-distributed {
     padding: 30px;
+    display: flex;
+    justify-content: space-between;
   }
 
   .footer-distributed .footer-left,
   .footer-distributed .footer-right {
     float: none;
-    max-width: 300px;
-    margin: 0 auto;
   }
 
   .footer-distributed .footer-left {
@@ -187,5 +160,24 @@ section {
 
   .footer-distributed form button {
     float: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  .footer-distributed {
+    font: bold 14px sans-serif;
+  }
+
+  .footer-distributed .footer-company-name {
+    font-size: 12px;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 250px;
+  }
+
+  .footer-distributed form button {
+    padding: 10px 35px;
   }
 }
