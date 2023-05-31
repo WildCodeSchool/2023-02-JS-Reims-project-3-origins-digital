@@ -10,14 +10,14 @@
 
 .category-button {
   flex: 1;
-  padding: 0.625em;  /* 10px */
+  padding: 0.625em; /* 10px */
   border: none;
   background: none;
   color: white;
-  font-size: 1em;  /* 16px */
-  cursor:pointer;
+  font-size: 1em; /* 16px */
+  cursor: pointer;
 }
 
 /* Desktop styles */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
 }
