@@ -1,12 +1,10 @@
-import Home from "./pages/Home";
-
 import "./App.css";
+import CategoryBar from "./components/CategoryBar";
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <p>coucou</p>
+      <CategoryBar />
     </div>
   );
 }

@@ -1,0 +1,36 @@
+/* Mobile Styles CategoryBar */
+.category-bar {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: black;
+  }
+  
+  .category-button {
+    flex: 1;
+    padding: 0.625em;  /* 10px */
+    border: none;
+    background: none;
+    color: white;
+    font-size: 1em;  /* 16px */
+  }
+  
+  /* Desktop styles */
+  @media (min-width: 48.75em) {  /* 780px */
+    .category-bar {
+      flex-direction: column;
+      position: static;
+      height: calc(100vh / 1em - 3.75em);  /* 60px */
+      width: auto;
+      align-items: flex-start;
+    }
+  
+    .category-button {
+      height: calc(20% / 1em);
+      width: 100%;
+      text-align: left;
+    }
+  }
+  
