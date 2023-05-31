@@ -3,6 +3,12 @@ body {
   padding: 0;
   background-color: black;
 }
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
 
 .headerLogo {
   height: 4rem;
