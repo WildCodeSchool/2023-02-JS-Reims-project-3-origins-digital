@@ -1,6 +1,18 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+.headerLogo {
+  height: 4rem;
 }
 
 /*  ----  FOOTER     ----- */
@@ -175,4 +187,3 @@ section {
   .footer-distributed form button {
     float: none;
   }
-}
