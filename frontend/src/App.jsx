@@ -1,12 +1,11 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import CategoryBar from "./components/CategoryBar";
-import CategoryPage from "./components/CategoryPage";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Header />
         <CategoryBar />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
