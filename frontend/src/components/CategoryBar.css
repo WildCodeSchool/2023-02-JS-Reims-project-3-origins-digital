@@ -1,0 +1,23 @@
+/* Mobile Styles CategoryBar */
+.category-bar {
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background: black;
+}
+
+.category-button {
+  flex: 1;
+  padding: 0.625em;  /* 10px */
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1em;  /* 16px */
+  cursor:pointer;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) { 
+}
