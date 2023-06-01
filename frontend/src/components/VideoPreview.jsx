@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 function VideoPreview({ video }) {
   return (
-    <div className="video-preview">
+    <figure className="video-preview">
       <img src={video.thumbnail} alt={video.title} />
       <div className="video-info">
         <h3>{video.title}</h3>
         <p>{video.description}</p>
       </div>
-    </div>
+    </figure>
   );
 }
 
