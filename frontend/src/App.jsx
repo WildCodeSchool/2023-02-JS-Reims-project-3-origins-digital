@@ -5,18 +5,20 @@ import CategoryPage from "./components/CategoryPage";
 import Carousel from "./components/Carousel";
 
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Router>
-        <Header />
         <Carousel />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
         </Routes>
         <CategoryBar />
       </Router>
+      <Footer />
     </div>
   );
 }
