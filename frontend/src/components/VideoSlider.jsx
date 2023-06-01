@@ -1,28 +1,18 @@
-import ReactPlayer from "react-player";
-import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
+import ReactPlayer from "react-player";
+import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
-function Carousel() {
+function VideoSlider({ slideNumber, videos, name }) {
   const [isMobileView, setIsMobileView] = useState(false);
-
-  const videos = [
-    "https://youtu.be/p5RKLMMb5u4",
-    "https://youtu.be/_GMJH85RgVA",
-    "https://youtu.be/kHsum3xHplA",
-    "https://youtu.be/Gdgp0exjN8I",
-    "https://youtu.be/mwIkAbAa9ec",
-    "https://youtu.be/zvq7GJQb2Sw",
-  ];
-
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: isMobileView ? 1 : 3,
-    slidesToScroll: isMobileView ? 1 : 3,
+    slidesToShow: isMobileView ? 1 : slideNumber,
+    slidesToScroll: isMobileView ? 1 : slideNumber,
     arrows: true,
   };
-
   // Utilisation de useEffect pour détecter si la vue est en mode mobile ou desktop
   useEffect(() => {
     const checkIfMobileView = () => {
@@ -38,10 +28,9 @@ function Carousel() {
       window.removeEventListener("resize", checkIfMobileView);
     };
   }, []);
-
   return (
-    <div className="carrousel">
-      <span> Suggestions </span>
+    <>
+      <h2>{name}</h2>
       <Slider
         dots={settings.dots}
         infinite={settings.infinite}
@@ -58,8 +47,12 @@ function Carousel() {
           </div>
         ))}
       </Slider>
-    </div>
+    </>
   );
 }
-
-export default Carousel;
+VideoSlider.propTypes = {
+  slideNumber: PropTypes.number.isRequired,
+  videos: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+  name: PropTypes.string.isRequired,
+};
+export default VideoSlider;
