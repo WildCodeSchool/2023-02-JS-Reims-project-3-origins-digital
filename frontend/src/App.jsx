@@ -11,12 +11,12 @@ function App() {
     <div className="App">
       <Router>
         <Header />
+        <Carousel />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
         </Routes>
         <CategoryBar />
       </Router>
-      <Carousel />
     </div>
   );
 }
