@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import CategoryBar from "./components/CategoryBar";
 import CategoryPage from "./components/CategoryPage";
 import Footer from "./components/Footer";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
+          <Route path="/searchResults/:query" element={<SearchResults />} />
         </Routes>
         <CategoryBar />
       </Router>
