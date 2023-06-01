@@ -13,6 +13,16 @@ function CategoryBar() {
 
   return (
     <div className="category-bar">
+      <div className="search-container">
+        <Link
+          key="Search"
+          className="category-button search-button"
+          to="/searchresults"
+        >
+          <span className="material-icons">search</span>
+        </Link>
+        <input type="text" placeholder="..u look for ?" />
+      </div>
       {sports.map((sport) => (
         <Link
           key={sport.name}

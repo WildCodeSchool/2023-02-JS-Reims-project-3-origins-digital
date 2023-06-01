@@ -2,21 +2,37 @@
 .category-bar {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   position: sticky;
   bottom: 0;
   width: 100%;
   background: black;
 }
 
-.category-button {
-  flex: 1;
-  padding: 0.625em; /* 10px */
-  border: none;
-  background: none;
-  color: white;
-  font-size: 1em; /* 16px */
-  cursor: pointer;
+.search-container {
+  display: flex;
+  align-items: center;
 }
+
+.search-container input[type="text"] {
+  margin-right: 10px;
+  background: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.category-button {
+  color: white;
+  text-decoration: none;
+  padding: 0.625em;
+}
+
+.material-icons {
+  color: white;
+  padding: 0.625em;
+}
+
 
 /* Desktop styles */
 @media (min-width: 768px) {
