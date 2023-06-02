@@ -21,13 +21,9 @@ body {
   background: #444;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  width: 100%;
   font: bold 16px sans-serif;
   text-align: left;
   padding: 3em 4em 2em;
-  overflow: hidden;
-  position: sticky;
-  bottom: 0;
 }
 
 section {
@@ -103,7 +99,6 @@ section {
   font-size: 1em;
   font-weight: normal;
   color: #d1d2d2;
-  width: 100%;
   padding: 1em;
 }
 
@@ -124,7 +119,6 @@ section {
   border: 0;
   padding: 1em 4em;
   font-weight: bold;
-  width: 100%;
   margin-top: 1em;
 }
 
@@ -132,7 +126,7 @@ section {
   width: 5em;
 }
 
-@media (min-width: 800px) {
+@media (min-width: 768px) {
   .footer-distributed {
     font: bold 14px sans-serif;
     padding: 30px;
