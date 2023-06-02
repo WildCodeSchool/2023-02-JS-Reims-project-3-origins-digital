@@ -29,7 +29,7 @@ function App() {
         <VideoSlider slideNumber={4} videos={videos} />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/searchResults/:query" element={<SearchResults />} />
+          <Route path="/search/:query" element={<SearchResults />} />
         </Routes>
         <CategoryBar />
       </Router>
