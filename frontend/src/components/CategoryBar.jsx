@@ -19,7 +19,7 @@ function CategoryBar() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/search/${search}`);
+    navigate(`/search?q=${search}`);
   };
 
   return (
