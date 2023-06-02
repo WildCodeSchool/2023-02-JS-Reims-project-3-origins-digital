@@ -7,7 +7,7 @@ function VideoPreview({ video }) {
       <img src={video.thumbnail} alt={video.title} />
       <div className="video-info">
         <h3>{video.title}</h3>
-        <p>{video.description}</p>
+        <figcaption>{video.description}</figcaption>
       </div>
     </figure>
   );
