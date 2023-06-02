@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import CategoryBar from "./components/CategoryBar";
 import CategoryPage from "./components/CategoryPage";
 import Footer from "./components/Footer";
-import SearchResults from "./components/SearchResults";
+import Search from "./components/Search";
 import VideoSlider from "./components/VideoSlider";
 import "./App.css";
 
@@ -29,7 +29,7 @@ function App() {
         <VideoSlider slideNumber={4} videos={videos} />
         <Routes>
           <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/search/:query" element={<SearchResults />} />
+          <Route path="/search/:query" element={<Search />} />
         </Routes>
         <CategoryBar />
       </Router>

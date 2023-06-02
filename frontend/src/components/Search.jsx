@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
-function SearchResults() {
-  const { query } = useParams();
+function Search() {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
 
   return (
     <div>
@@ -17,4 +18,4 @@ function SearchResults() {
   );
 }
 
-export default SearchResults;
+export default Search;

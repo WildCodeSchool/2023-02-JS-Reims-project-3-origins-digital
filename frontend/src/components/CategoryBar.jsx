@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import "./CategoryBar.css";
 
 function CategoryBar() {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
   const sports = [
     { name: "Football", icon: "sports_soccer" },
@@ -12,28 +13,29 @@ function CategoryBar() {
     { name: "Hockey", icon: "sports_hockey" },
   ];
 
-  const history = useHistory();
-
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
 
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    history.push(`/search/${search}`);
-    setSearch("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search/${search}`);
   };
 
   return (
     <div className="category-bar">
-      <form className="search-container" onSubmit={handleSearchSubmit}>
+      <form className="search-container" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="..u look for ?"
           value={search}
           onChange={handleSearchChange}
         />
-        <button type="submit" className="category-button search-button">
+        <button
+          type="submit"
+          key="Search"
+          className="category-button search-button"
+        >
           <span className="material-icons">search</span>
         </button>
       </form>
