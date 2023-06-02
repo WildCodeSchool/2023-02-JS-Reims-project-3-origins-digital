@@ -5,10 +5,10 @@ function VideoPreview({ video }) {
   return (
     <figure className="video-preview">
       <img src={video.thumbnail} alt={video.title} />
-      <div className="video-info">
+      <figcaption className="video-info">
         <h3>{video.title}</h3>
-        <figcaption>{video.description}</figcaption>
-      </div>
+        <p>{video.description}</p>
+      </figcaption>
     </figure>
   );
 }
