@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./CategoryBar.css";
 
 function CategoryBar() {
@@ -12,27 +12,31 @@ function CategoryBar() {
     { name: "Hockey", icon: "sports_hockey" },
   ];
 
+  const history = useHistory();
+
   const handleSearchChange = (event) => {
     setSearch(event.target.value);
   };
 
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    history.push(`/search/${search}`);
+    setSearch("");
+  };
+
   return (
     <div className="category-bar">
-      <div className="search-container">
+      <form className="search-container" onSubmit={handleSearchSubmit}>
         <input
           type="text"
           placeholder="..u look for ?"
           value={search}
           onChange={handleSearchChange}
         />
-        <Link
-          key="Search"
-          className="category-button search-button"
-          to={`/searchResults/${search}`}
-        >
+        <button type="submit" className="category-button search-button">
           <span className="material-icons">search</span>
-        </Link>
-      </div>
+        </button>
+      </form>
       {sports.map((sport) => (
         <Link
           key={sport.name}
