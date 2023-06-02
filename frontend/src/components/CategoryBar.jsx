@@ -1,8 +1,10 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import "./CategoryBar.css";
 
 function CategoryBar() {
+  const navigate = useNavigate();
+  const [search, setSearch] = useState("");
   const sports = [
     { name: "Football", icon: "sports_soccer" },
     { name: "Basketball", icon: "sports_basketball" },
@@ -11,8 +13,32 @@ function CategoryBar() {
     { name: "Hockey", icon: "sports_hockey" },
   ];
 
+  const handleSearchChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate(`/search?q=${search}`);
+  };
+
   return (
     <div className="category-bar">
+      <form className="search-container" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="..u look for ?"
+          value={search}
+          onChange={handleSearchChange}
+        />
+        <button
+          type="submit"
+          key="Search"
+          className="category-button search-button"
+        >
+          <span className="material-icons">search</span>
+        </button>
+      </form>
       {sports.map((sport) => (
         <Link
           key={sport.name}

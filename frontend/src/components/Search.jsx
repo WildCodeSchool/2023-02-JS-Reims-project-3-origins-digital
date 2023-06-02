@@ -1,12 +1,13 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 
-function CategoryPage() {
-  const { categoryName } = useParams();
+function Search() {
+  const [searchParams] = useSearchParams();
+  const query = searchParams.get("q");
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h1>{categoryName} </h1>
+    <div>
+      <h1>Search Results for: {query}</h1>
       <p>Videos Soon...stay Connected</p>
       <img
         src="https://as2.ftcdn.net/v2/jpg/04/75/50/13/1000_F_475501309_7E1uysMf46oZA5FOPwzuqIxgIKjxGsMN.jpg"
@@ -17,4 +18,4 @@ function CategoryPage() {
   );
 }
 
-export default CategoryPage;
+export default Search;
