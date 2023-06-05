@@ -181,3 +181,28 @@ section {
   max-width: 800px;
   padding: 20px;
 }
+
+.HeadForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Formulaire label,
+.Formulaire input {
+  margin: 10px;
+}
+
+.Formulaire input[type="submit"] {
+  margin: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.Formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
