@@ -34,6 +34,11 @@ const UserManager = require("./ItemManager");
 models.item = new UserManager();
 models.item.setDatabase(pool);
 
+const VideoManager = require("./VideoManager");
+
+models.video = new VideoManager();
+models.video.setDatabase(pool);
+
 // bonus: use a proxy to personalize error message,
 // when asking for a non existing model
 
