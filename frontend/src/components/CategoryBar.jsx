@@ -4,6 +4,7 @@ import "./CategoryBar.css";
 
 function CategoryBar() {
   const navigate = useNavigate();
+  const [showSearchInput, setShowSearchInput] = useState(false);
   const [search, setSearch] = useState("");
   const sports = [
     { name: "Football", icon: "sports_soccer" },
@@ -22,19 +23,26 @@ function CategoryBar() {
     navigate(`/search?q=${search}`);
   };
 
+  const handleButtonClick = () => {
+    setShowSearchInput((prevState) => !prevState);
+  };
+
   return (
     <div className="category-bar">
       <form className="search-container" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="..u look for ?"
-          value={search}
-          onChange={handleSearchChange}
-        />
+        {showSearchInput && (
+          <input
+            type="text"
+            placeholder="Recherche"
+            value={search}
+            onChange={handleSearchChange}
+          />
+        )}
         <button
           type="submit"
           key="Search"
           className="category-button search-button"
+          onClick={handleButtonClick}
         >
           <span className="material-icons">search</span>
         </button>
