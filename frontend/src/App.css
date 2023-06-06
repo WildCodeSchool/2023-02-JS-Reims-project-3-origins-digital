@@ -180,3 +180,28 @@ section {
   max-width: 800px;
   padding: 20px;
 }
+
+.header-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formulaire label,
+.formulaire input {
+  margin: 10px;
+}
+
+.formulaire input[type="submit"] {
+  margin: 10px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.formulaire {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

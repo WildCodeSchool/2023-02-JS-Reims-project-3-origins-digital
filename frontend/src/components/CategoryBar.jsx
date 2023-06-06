@@ -27,16 +27,17 @@ function CategoryBar() {
       <form className="search-container" onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="..u look for ?"
+          placeholder="Search Sports,Teams..."
           value={search}
           onChange={handleSearchChange}
         />
         <button
           type="submit"
           key="Search"
-          className="category-button search-button"
+          className="category-button search-button "
         >
-          <span className="material-icons">search</span>
+          <span className="material-icons search-icon-color">search</span>
+          <span className="search-text search-text-color">Search</span>
         </button>
       </form>
       {sports.map((sport) => (
@@ -46,6 +47,7 @@ function CategoryBar() {
           to={`/category/${sport.name}`}
         >
           <span className="material-icons">{sport.icon}</span>
+          {sport.name}
         </Link>
       ))}
     </div>
