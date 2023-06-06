@@ -2,14 +2,14 @@ const express = require("express");
 
 const router = express.Router();
 
-const usersControllers = require("./controllers/itemControllers");
+const usersControllers = require("./controllers/userControllers");
 
 const videoControllers = require("./controllers/videoControllers");
 
 router.get("/videos", videoControllers.browse);
-router.get("/video/:id", videoControllers.read);
-router.put("/video/:id", videoControllers.edit);
-router.post("/video", videoControllers.add);
+router.get("/videos/:id", videoControllers.read);
+router.put("/videos/:id", videoControllers.edit);
+router.post("/videos", videoControllers.add);
 router.delete("/video/:id", videoControllers.destroy);
 
 router.get("/users", usersControllers.browse);
