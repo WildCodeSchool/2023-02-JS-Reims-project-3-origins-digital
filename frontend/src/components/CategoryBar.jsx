@@ -37,6 +37,7 @@ function CategoryBar() {
           className="category-button search-button"
         >
           <span className="material-icons">search</span>
+          <span className="search-text">Search</span>
         </button>
       </form>
       {sports.map((sport) => (
