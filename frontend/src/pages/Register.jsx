@@ -16,9 +16,9 @@ function Register() {
   };
 
   return (
-    <div className="HeadForm">
+    <div className="header-form">
       <h2>Formulaire d'enregistrement</h2>
-      <div className="Formulaire">
+      <div className="formulaire">
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">Nom d'utilisateur:</label>
           <input

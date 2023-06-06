@@ -37,7 +37,7 @@ function Login() {
           });
       }}
     >
-      <div className="Formulaire">
+      <div className="formulaire">
         <label htmlFor="username">Nom d'utilisateur</label>
         <input ref={usernameRef} type="text" id="username" name="username" />
         <label htmlFor="password">Mot de passe</label>
@@ -49,12 +49,8 @@ function Login() {
         />
 
         <button type="submit">Connexion</button>
-        <Link to="/inscription">
-          <button type="button">Inscription</button>
-        </Link>
-        <Link to="/forgetpass">
-          <button type="submit">Mot de passe oublié ? </button>
-        </Link>
+        <Link to="/inscription">Inscription</Link>
+        <Link to="/forgetpass">Mot de passe oublié ?</Link>
       </div>
     </form>
   );

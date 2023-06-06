@@ -5,10 +5,8 @@ function Header() {
   return (
     <header className="header">
       <img src={Logo} alt="logo Origins digital" className="headerLogo" />
-      <Link to="/connexion">
-        <button type="button" className="header_button">
-          Connexion
-        </button>
+      <Link to="/connexion" className="header_button">
+        Connexion
       </Link>
     </header>
   );

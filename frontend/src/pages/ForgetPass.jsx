@@ -10,7 +10,7 @@ function ForgetPass() {
   };
 
   return (
-    <div className="Formulaire">
+    <div className="formulaire">
       <h2>Récupération du mot de passe</h2>
       <form onSubmit={handleSubmit}>
         <label htmlFor="email">Email:</label>
