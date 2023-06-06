@@ -46,6 +46,7 @@ function CategoryBar() {
           to={`/category/${sport.name}`}
         >
           <span className="material-icons">{sport.icon}</span>
+          {sport.name}
         </Link>
       ))}
     </div>
