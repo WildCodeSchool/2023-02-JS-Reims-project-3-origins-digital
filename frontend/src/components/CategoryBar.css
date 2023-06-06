@@ -18,7 +18,7 @@
 
 .search-container input[type="text"] {
   margin-right: 10px;
-  background: white;
+  background: rgb(255, 254, 254);
   border: none;
   padding: 5px;
   border-radius: 5px;
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: white;
+  color: rgb(255, 255, 255);
   text-decoration: none;
   padding: 1em;
   flex-basis: calc(33.33% - 20px);
@@ -49,6 +49,12 @@
 .material-icons {
   color: white;
   padding: 0.625em;
+}
+.search-text-color {
+  color: black;
+}
+.search-icon-color {
+  color: black;
 }
 
 /* Desktop styles */
