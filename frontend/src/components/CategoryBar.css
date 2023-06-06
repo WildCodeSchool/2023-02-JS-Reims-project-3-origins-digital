@@ -1,7 +1,6 @@
 /* Mobile Styles CategoryBar */
 .category-bar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   position: sticky;
   bottom: 0;
