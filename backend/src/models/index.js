@@ -29,7 +29,7 @@ pool.getConnection().catch(() => {
 
 const models = {};
 
-const UserManager = require("./ItemManager");
+const UserManager = require("./UserManager");
 
 models.item = new UserManager();
 models.item.setDatabase(pool);

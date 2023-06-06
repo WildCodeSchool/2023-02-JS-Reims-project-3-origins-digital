@@ -6,7 +6,7 @@ const usersControllers = require("./controllers/itemControllers");
 
 const videoControllers = require("./controllers/videoControllers");
 
-router.get("/video", videoControllers.browse);
+router.get("/videos", videoControllers.browse);
 router.get("/video/:id", videoControllers.read);
 router.put("/video/:id", videoControllers.edit);
 router.post("/video", videoControllers.add);
