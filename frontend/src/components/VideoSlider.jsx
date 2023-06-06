@@ -10,7 +10,7 @@ function VideoSlider({ slideNumber, videos, name }) {
     speed: 500,
     slidesToShow: isMobileView ? 1 : slideNumber,
     slidesToScroll: isMobileView ? 1 : slideNumber,
-    arrows: true,
+    arrows: false,
   };
 
   useEffect(() => {

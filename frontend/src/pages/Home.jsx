@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VideoSlider from "./VideoSlider";
+import VideoSlider from "../components/VideoSlider";
 
 function Home() {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
