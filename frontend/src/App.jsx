@@ -21,7 +21,6 @@ function App() {
         <Route path="/connexion" element={<Login />} />
         <Route path="/inscription" element={<Register />} />
         <Route path="/forgetpass" element={<ForgetPass />} />
-        <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path="/search/" element={<Search />} />
       </Routes>
       <CategoryBar />
