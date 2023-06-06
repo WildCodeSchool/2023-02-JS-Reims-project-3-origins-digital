@@ -64,12 +64,24 @@ function Home() {
       idCategory: 2,
     },
   ];
-  const suggestedVideos = videos.filter((video) => video.idCategory === 7);
-  const footballVideos = videos.filter((video) => video.idCategory === 1);
-  const basketballVideos = videos.filter((video) => video.idCategory === 2);
-  const tennisVideos = videos.filter((video) => video.idCategory === 3);
-  const swimmingVideos = videos.filter((video) => video.idCategory === 4);
-  const hockeyVideos = videos.filter((video) => video.idCategory === 5);
+  const suggestedVideos = videos
+    .filter((video) => video.idCategory === 7)
+    .concat(videos.filter((video) => video.idCategory === 7));
+  const footballVideos = videos
+    .filter((video) => video.idCategory === 1)
+    .concat(videos.filter((video) => video.idCategory === 1));
+  const basketballVideos = videos
+    .filter((video) => video.idCategory === 2)
+    .concat(videos.filter((video) => video.idCategory === 2));
+  const tennisVideos = videos
+    .filter((video) => video.idCategory === 3)
+    .concat(videos.filter((video) => video.idCategory === 3));
+  const swimmingVideos = videos
+    .filter((video) => video.idCategory === 4)
+    .concat(videos.filter((video) => video.idCategory === 4));
+  const hockeyVideos = videos
+    .filter((video) => video.idCategory === 5)
+    .concat(videos.filter((video) => video.idCategory === 5));
 
   return (
     <div>
