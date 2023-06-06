@@ -3,6 +3,7 @@ body {
   padding: 0;
   background-color: black;
   color: white;
+  overflow-x: auto;
 }
 
 .header {
@@ -24,6 +25,7 @@ body {
   font: bold 16px sans-serif;
   text-align: left;
   padding: 3em 4em 2em;
+  position: relative;
 }
 
 section {
