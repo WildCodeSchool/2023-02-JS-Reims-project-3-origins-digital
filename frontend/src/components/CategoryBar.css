@@ -1,6 +1,8 @@
-/* Mobile Styles CategoryBar */
+/* Mobile styles */
 .category-bar {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
   position: sticky;
   bottom: 0;
@@ -10,6 +12,8 @@
 .search-container {
   display: flex;
   align-items: center;
+  flex-basis: 100%;
+  margin-bottom: 10px;
 }
 
 .search-container input[type="text"] {
@@ -21,11 +25,25 @@
 }
 
 .category-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
   text-decoration: none;
-  padding: 0.625em;
-  background-color: black;
-  border: none;
+  padding: 1em;
+  flex-basis: calc(33.33% - 20px);
+}
+
+.category-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.category-name {
+  text-align: center;
 }
 
 .material-icons {
@@ -36,20 +54,10 @@
 /* Desktop styles */
 @media (min-width: 768px) {
   .category-bar {
-    flex-direction: column;
-    width: 5%;
-    position: relative;
-    padding: 1rem;
-  }
-
-  .search-container input[type="text"] {
-    margin-right: 0;
-    margin-bottom: 10px;
-    width: 100%;
+    flex-wrap: nowrap;
   }
 
   .category-button {
-    width: 100%;
-    margin-right: 0;
+    padding: 1em 2em;
   }
 }
