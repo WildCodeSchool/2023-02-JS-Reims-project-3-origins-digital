@@ -1,4 +1,4 @@
-import { Route, Routes, Router } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import CategoryBar from "./components/CategoryBar";
 import CategoryPage from "./components/CategoryPage";
@@ -14,15 +14,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/category/:categoryName" element={<CategoryPage />} />
-          <Route path="/search/" element={<Search />} />
-        </Routes>
-        <CategoryBar />
-      </Router>
       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+        <Route path="/search/" element={<Search />} />
         <Route path="/connexion" element={<Login />} />
         <Route path="/inscription" element={<Register />} />
         <Route path="/forgetpass" element={<ForgetPass />} />
