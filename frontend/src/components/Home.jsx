@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import VideoSlider from "./VideoSlider";
 
 function Home() {
+  const [suggestedVideos, setSuggestedVideos] = useState([]);
+
   const videos = [
     {
       title: "Crazy Skills🤯🔥#Football #Skills",
@@ -64,9 +66,14 @@ function Home() {
       idCategory: 2,
     },
   ];
-  const suggestedVideos = videos
-    .filter((video) => video.idCategory === 7)
-    .concat(videos.filter((video) => video.idCategory === 7));
+  useEffect(() => {
+    const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
+
+    const suggestions = shuffledVideos.slice(0, 3).concat(shuffledVideos);
+
+    setSuggestedVideos(suggestions);
+  }, []);
+
   const footballVideos = videos
     .filter((video) => video.idCategory === 1)
     .concat(videos.filter((video) => video.idCategory === 1));
