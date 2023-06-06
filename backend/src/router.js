@@ -10,7 +10,7 @@ router.get("/videos", videoControllers.browse);
 router.get("/videos/:id", videoControllers.read);
 router.put("/videos/:id", videoControllers.edit);
 router.post("/videos", videoControllers.add);
-router.delete("/video/:id", videoControllers.destroy);
+router.delete("/videos/:id", videoControllers.destroy);
 
 router.get("/users", usersControllers.browse);
 router.get("/users/:id", usersControllers.read);
