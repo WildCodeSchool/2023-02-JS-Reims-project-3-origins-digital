@@ -94,7 +94,7 @@ function Home() {
   return (
     <div>
       <VideoSlider
-        slideNumber={3}
+        slideNumber={4}
         videos={suggestedVideos}
         name="Suggestions"
       />
