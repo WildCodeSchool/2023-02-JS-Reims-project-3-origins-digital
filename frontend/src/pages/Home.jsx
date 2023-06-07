@@ -70,20 +70,20 @@ function Home() {
     const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
 
     const suggestions = shuffledVideos.slice(0, 3);
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 3; i += 1) {
       suggestions.push(...suggestions);
     }
 
-    setSuggestedVideos(suggestions);
+    setSuggestedVideos(suggestions.slice(0, 15));
   }, []);
   const getVideosByCategory = (idCategory) => {
     const categoryVideos = videos.filter(
       (video) => video.idCategory === idCategory
     );
-    for (let i = 0; i < 5; i += 1) {
+    for (let i = 0; i < 3; i += 1) {
       categoryVideos.push(...categoryVideos);
     }
-    return categoryVideos;
+    return categoryVideos.slice(0, 15);
   };
   const footballVideos = getVideosByCategory(1);
   const basketballVideos = getVideosByCategory(2);
