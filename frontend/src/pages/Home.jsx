@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VideoSlider from "../components/VideoSlider";
+import VideoCarousel from "../components/VideoCarousel";
 
 function Home() {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
@@ -90,23 +90,25 @@ function Home() {
   const tennisVideos = suggestedVideos;
   const swimmingVideos = suggestedVideos;
   const hockeyVideos = suggestedVideos;
+  // eslint-disable-next-line no-restricted-syntax
+  console.log(footballVideos.length);
 
   return (
     <div>
-      <VideoSlider
+      <VideoCarousel
         slideNumber={4}
         videos={suggestedVideos}
         name="Suggestions"
       />
-      <VideoSlider slideNumber={3} videos={footballVideos} name="Football" />
-      <VideoSlider
+      <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
+      <VideoCarousel
         slideNumber={3}
         videos={basketballVideos}
         name="Basketball"
       />
-      <VideoSlider slideNumber={3} videos={tennisVideos} name="Tennis" />
-      <VideoSlider slideNumber={3} videos={swimmingVideos} name="Swimming" />
-      <VideoSlider slideNumber={3} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel slideNumber={3} videos={tennisVideos} name="Tennis" />
+      <VideoCarousel slideNumber={3} videos={swimmingVideos} name="Swimming" />
+      <VideoCarousel slideNumber={3} videos={hockeyVideos} name="Hockey" />
     </div>
   );
 }
