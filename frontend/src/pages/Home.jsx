@@ -90,8 +90,6 @@ function Home() {
   const tennisVideos = suggestedVideos;
   const swimmingVideos = suggestedVideos;
   const hockeyVideos = suggestedVideos;
-  // eslint-disable-next-line no-restricted-syntax
-  console.log(footballVideos.length);
 
   return (
     <div>
