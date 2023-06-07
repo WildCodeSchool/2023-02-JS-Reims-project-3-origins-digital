@@ -54,6 +54,12 @@
   color: white;
   padding: 0.625em;
 }
+.search-text-color {
+  color: black;
+}
+.search-icon-color {
+  color: black;
+}
 
 /* Desktop styles */
 @media (min-width: 768px) {
