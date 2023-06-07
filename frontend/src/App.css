@@ -1,10 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: url("./images/fond.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  overflow-x: auto;
+  background-color: black;
 }
 
 .header {
