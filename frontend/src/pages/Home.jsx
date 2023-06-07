@@ -96,19 +96,19 @@ function Home() {
   return (
     <div>
       <VideoCarousel
-        slideNumber={4}
+        slideNumber={3}
         videos={suggestedVideos}
         name="Suggestions"
       />
       <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
       <VideoCarousel
-        slideNumber={3}
+        slideNumber={4}
         videos={basketballVideos}
         name="Basketball"
       />
-      <VideoCarousel slideNumber={3} videos={tennisVideos} name="Tennis" />
-      <VideoCarousel slideNumber={3} videos={swimmingVideos} name="Swimming" />
-      <VideoCarousel slideNumber={3} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel slideNumber={4} videos={tennisVideos} name="Tennis" />
+      <VideoCarousel slideNumber={4} videos={swimmingVideos} name="Swimming" />
+      <VideoCarousel slideNumber={4} videos={hockeyVideos} name="Hockey" />
     </div>
   );
 }
