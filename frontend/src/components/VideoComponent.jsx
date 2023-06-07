@@ -23,7 +23,7 @@ function VideoComponent() {
     <div>
       {videos.map((video) => (
         <div key={video.id}>
-          <p>{video.title}</p>
+          <figcaption>{video.title}</figcaption>
           <video src={video.url} controls>
             <track
               kind="captions"
