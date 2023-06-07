@@ -69,7 +69,10 @@ function Home() {
   useEffect(() => {
     const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
 
-    const suggestions = shuffledVideos.slice(0, 3).concat(shuffledVideos);
+    const suggestions = shuffledVideos.slice(0, 3);
+    for (let i = 0; i < 5; i += 1) {
+      suggestions.push(...suggestions);
+    }
 
     setSuggestedVideos(suggestions);
   }, []);
