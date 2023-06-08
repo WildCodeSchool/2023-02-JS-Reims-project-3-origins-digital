@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
 function VideoCarousel({ videos, name, slideNumber }) {
+  const [slideNum, setSlideNum] = useState(slideNumber);
+
+  useEffect(() => {
+    const updateSlidesNumber = () => {
+      setSlideNum(window.innerWidth <= 768 ? 1 : slideNumber);
+    };
+    updateSlidesNumber();
+    window.addEventListener("resize", updateSlidesNumber);
+    return () => {
+      window.removeEventListener("resize", updateSlidesNumber);
+    };
+  }, [slideNumber]);
   return (
     <div className="video-carousel">
       <h1>{name}</h1>
@@ -22,7 +34,7 @@ function VideoCarousel({ videos, name, slideNumber }) {
         useKeyboardArrows
         stopOnHover
         centerMode
-        centerSlidePercentage={100 / slideNumber}
+        centerSlidePercentage={100 / slideNum}
         axis="horizontal"
       >
         {videos.map((video, index) => (
