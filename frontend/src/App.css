@@ -1,3 +1,17 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url(../Fonts/Gilroy-ExtraBold.otf);
+}
+@font-face {
+  font-family: "Kanit";
+  src: url(../Fonts/Kanit-Light.ttf);
+}
+
+* {
+  font-family: "Gilroy";
+  color: #ffffff;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -190,18 +204,24 @@ section {
 .formulaire label,
 .formulaire input {
   margin: 10px;
+  font-family: "Kanit";
 }
 
 .formulaire input[type="submit"] {
   margin: 10px;
+  background-color: #444;
 }
 form {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .formulaire {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+button {
+  background-color: #444;
 }
