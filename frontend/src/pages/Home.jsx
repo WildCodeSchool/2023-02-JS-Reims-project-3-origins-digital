@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import VideoSlider from "../components/VideoSlider";
+import VideoCarousel from "../components/VideoCarousel";
 
 function Home() {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
@@ -69,43 +69,44 @@ function Home() {
   useEffect(() => {
     const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
 
-    const suggestions = shuffledVideos.slice(0, 3).concat(shuffledVideos);
+    const suggestions = shuffledVideos.slice(0, 3);
+    for (let i = 0; i < 3; i += 1) {
+      suggestions.push(...suggestions);
+    }
 
-    setSuggestedVideos(suggestions);
+    setSuggestedVideos(suggestions.slice(0, 15));
   }, []);
-
-  const footballVideos = videos
-    .filter((video) => video.idCategory === 1)
-    .concat(videos.filter((video) => video.idCategory === 1));
-  const basketballVideos = videos
-    .filter((video) => video.idCategory === 2)
-    .concat(videos.filter((video) => video.idCategory === 2));
-  const tennisVideos = videos
-    .filter((video) => video.idCategory === 3)
-    .concat(videos.filter((video) => video.idCategory === 3));
-  const swimmingVideos = videos
-    .filter((video) => video.idCategory === 4)
-    .concat(videos.filter((video) => video.idCategory === 4));
-  const hockeyVideos = videos
-    .filter((video) => video.idCategory === 5)
-    .concat(videos.filter((video) => video.idCategory === 5));
+  const getVideosByCategory = (idCategory) => {
+    const categoryVideos = videos.filter(
+      (video) => video.idCategory === idCategory
+    );
+    for (let i = 0; i < 3; i += 1) {
+      categoryVideos.push(...categoryVideos);
+    }
+    return categoryVideos.slice(0, 15);
+  };
+  const footballVideos = getVideosByCategory(1);
+  const basketballVideos = getVideosByCategory(2);
+  const tennisVideos = suggestedVideos;
+  const swimmingVideos = suggestedVideos;
+  const hockeyVideos = suggestedVideos;
 
   return (
     <div>
-      <VideoSlider
+      <VideoCarousel
         slideNumber={3}
         videos={suggestedVideos}
         name="Suggestions"
       />
-      <VideoSlider slideNumber={3} videos={footballVideos} name="Football" />
-      <VideoSlider
-        slideNumber={3}
+      <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
+      <VideoCarousel
+        slideNumber={4}
         videos={basketballVideos}
         name="Basketball"
       />
-      <VideoSlider slideNumber={3} videos={tennisVideos} name="Tennis" />
-      <VideoSlider slideNumber={3} videos={swimmingVideos} name="Swimming" />
-      <VideoSlider slideNumber={3} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel slideNumber={4} videos={tennisVideos} name="Tennis" />
+      <VideoCarousel slideNumber={4} videos={swimmingVideos} name="Swimming" />
+      <VideoCarousel slideNumber={4} videos={hockeyVideos} name="Hockey" />
     </div>
   );
 }
