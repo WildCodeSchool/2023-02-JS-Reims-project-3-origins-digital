@@ -98,7 +98,7 @@ function Home() {
         videos={suggestedVideos}
         name="Suggestions"
       />
-      <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
+      <VideoCarousel slideNumber={4} videos={footballVideos} name="Football" />
       <VideoCarousel
         slideNumber={4}
         videos={basketballVideos}
