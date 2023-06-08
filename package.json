@@ -29,9 +29,5 @@
     "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "husky": "^8.0.3"
-  },
-  "dependencies": {
-    "mysql": "^2.18.1"
   }
 }
-
