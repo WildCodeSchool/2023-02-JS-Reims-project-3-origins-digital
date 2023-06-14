@@ -2,16 +2,11 @@
   display: flex;
   flex-direction: row;
   position: sticky;
-  background: black;
   top: 0;
   bottom: 0;
-  overflow-x: auto;
-  width: initial;
-}
-
-.category-button {
-  flex: 1;
-  padding: 10px;
+  padding: 1rem;
+  justify-content: space-between;
+  z-index: 50;
 }
 
 .search-container {
@@ -27,6 +22,7 @@
   padding: 5px;
   border-radius: 5px;
   width: -webkit-fill-available;
+  color: black;
 }
 
 .category-button {
@@ -34,8 +30,8 @@
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: black;
   border: none;
+  text-decoration: none;
 }
 
 .category-icon {
@@ -52,24 +48,21 @@
 
 .material-icons {
   color: white;
-  padding: 0.625em;
 }
 .search-text-color {
   color: black;
 }
 .search-icon-color {
-  color: black;
+  color: white;
 }
 
 /* Desktop styles */
 @media (min-width: 768px) {
   .category-bar {
     flex-direction: column;
-    position: relative;
-    top: auto;
-    bottom: auto;
-    width: 8rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    top: 0;
+    left: 0;
+    height: fit-content;
   }
+
 }
