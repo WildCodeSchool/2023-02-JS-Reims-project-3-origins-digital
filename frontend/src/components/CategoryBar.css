@@ -7,22 +7,7 @@
   padding: 1rem;
   justify-content: space-between;
   z-index: 50;
-}
-
-.search-container {
-  display: flex;
-  align-items: center;
-  flex-basis: 100%;
-  margin-bottom: 10px;
-}
-
-.search-container input[type="text"] {
-  background: white;
-  border: none;
-  padding: 5px;
-  border-radius: 5px;
-  width: -webkit-fill-available;
-  color: black;
+  background-color: black;
 }
 
 .category-button {
@@ -62,7 +47,8 @@
     flex-direction: column;
     top: 0;
     left: 0;
-    height: fit-content;
+    padding: 3em;
+    gap: 9rem;
   }
 
 }
