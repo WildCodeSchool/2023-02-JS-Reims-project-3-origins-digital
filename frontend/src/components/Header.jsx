@@ -14,6 +14,9 @@ function Header() {
   };
   return (
     <header className="header">
+      <Link to="/">
+        <img src={Logo} alt="logo Origins digital" className="headerLogo" />
+      </Link>
       <Link to="/connexion" className="header_button">
         Connexion
       </Link>
