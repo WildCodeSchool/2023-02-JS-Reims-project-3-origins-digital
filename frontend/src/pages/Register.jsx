@@ -1,18 +1,48 @@
 import React, { useState } from "react";
 
 function Register() {
-  const [username, setUsername] = useState("");
+  const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [email, setEmail] = useState("");
+  const [mail, setMail] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
-    setEmail("");
+    // Construire l'objet utilisateur à envoyer à l'API
+    const user = {
+      name,
+      password,
+      confirmPassword,
+      mail,
+    };
+
+    try {
+      // Envoyer la requête POST à votre API backend pour enregistrer l'utilisateur
+      const response = await fetch("http://localhost:5001/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+
+      if (response.ok) {
+        // Réinitialiser les champs du formulaire si l'enregistrement est réussi
+        setName("");
+        setPassword("");
+        setConfirmPassword("");
+        setMail("");
+        alert("Enregistrement réussi !");
+      } else {
+        // Afficher une alerte en cas d'erreur lors de l'enregistrement
+        alert("Erreur lors de l'enregistrement.");
+      }
+    } catch (error) {
+      console.error(error);
+      // Afficher une alerte en cas d'erreur lors de la requête
+      alert("Une erreur s'est produite. Veuillez réessayer plus tard.");
+    }
   };
 
   return (
@@ -20,13 +50,13 @@ function Register() {
       <h2>Formulaire d'enregistrement</h2>
       <div className="formulaire">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="username">Nom d'utilisateur:</label>
+          <label htmlFor="name">Nom d'utilisateur:</label>
           <input
             type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             required
           />
 
@@ -55,11 +85,11 @@ function Register() {
           <label htmlFor="email">Email:</label>
 
           <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="mail"
+            id="mail"
+            name="mail"
+            value={mail}
+            onChange={(e) => setMail(e.target.value)}
             required
           />
 

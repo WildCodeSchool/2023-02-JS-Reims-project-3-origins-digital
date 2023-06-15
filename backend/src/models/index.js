@@ -31,8 +31,8 @@ const models = {};
 
 const UserManager = require("./UserManager");
 
-models.item = new UserManager();
-models.item.setDatabase(pool);
+models.user = new UserManager();
+models.user.setDatabase(pool);
 
 const VideoManager = require("./VideoManager");
 
