@@ -28,6 +28,10 @@ body {
   background-color: black;
 }
 
+button {
+  background-color: black;
+}
+
 .headerLogo {
   height: 4rem;
 }
@@ -56,7 +60,7 @@ body {
 }
 
 .search-text-color {
-  color: black;
+  color: white;
 }
 .search-icon-color {
   color: white;
@@ -268,7 +272,4 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-button {
-  background-color: #444;
 }
