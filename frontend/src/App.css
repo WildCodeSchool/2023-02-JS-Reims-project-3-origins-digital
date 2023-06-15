@@ -206,7 +206,9 @@ section {
   margin: 10px;
   font-family: "Kanit";
 }
-
+input {
+  color: black;
+}
 .formulaire input[type="submit"] {
   margin: 10px;
   background-color: #444;
