@@ -16,7 +16,7 @@ CREATE TABLE video (
   title VARCHAR(100),
   description TEXT NULL,
   url VARCHAR(50),
-  thumbnail_url VARCHAR(50),
+  thumbnail_url VARCHAR(255),
   time TIME NOT NULL,
   id_category INT DEFAULT NULL,
   KEY `fk_video_category` (`id_category`),
