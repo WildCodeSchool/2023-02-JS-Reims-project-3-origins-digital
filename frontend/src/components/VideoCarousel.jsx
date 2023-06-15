@@ -37,9 +37,9 @@ function VideoCarousel({ videos, name, slideNumber }) {
         centerSlidePercentage={100 / slideNum}
         axis="horizontal"
       >
-        {videos.map((video, index) => (
-          <div key={`${video.title}-${index * 4}`}>
-            <img src={video.thumbnailUrl} alt={video.title} />
+        {videos.map((video) => (
+          <div key={`${video.id}`}>
+            <img src={video.thumbnail_url} alt={video.title} />
             <p className="legend">{video.title}</p>
           </div>
         ))}

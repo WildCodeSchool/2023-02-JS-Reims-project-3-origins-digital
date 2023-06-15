@@ -18,14 +18,61 @@ body {
   background-color: black;
 }
 
+/*     HEADER    */
+
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
   align-items: center;
   background-color: black;
 }
+
 .headerLogo {
   height: 4rem;
+}
+
+.header_button {
+  text-decoration: none;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.search-container input[type="text"] {
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: black;
+}
+
+.search-text-color {
+  color: black;
+}
+.search-icon-color {
+  color: white;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    flex-direction: row-reverse;
+  }
+  .header {
+    flex-direction: row-reverse;
+  }
 }
 
 /* ---- FOOTER ----- */
