@@ -25,7 +25,7 @@ function App() {
                 element={<CategoryPage />}
               />
               <Route path="/search/" element={<Search />} />
-              <Route path="/connexion" element={<Login />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/forgetpass" element={<ForgetPass />} />
             </Routes>
