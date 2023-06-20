@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import ForgetPass from "./pages/ForgetPass";
 import Home from "./pages/Home";
 import "./App.css";
+import { VideoProvider } from "./contexts/VideoContext";
 
 function App() {
   return (
@@ -16,14 +17,19 @@ function App() {
       <Header />
       <div className="layout">
         <main className="main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/category/:categoryName" element={<CategoryPage />} />
-            <Route path="/search/" element={<Search />} />
-            <Route path="/connexion" element={<Login />} />
-            <Route path="/inscription" element={<Register />} />
-            <Route path="/forgetpass" element={<ForgetPass />} />
-          </Routes>
+          <VideoProvider>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route
+                path="/category/:categoryName"
+                element={<CategoryPage />}
+              />
+              <Route path="/search/" element={<Search />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/inscription" element={<Register />} />
+              <Route path="/forgetpass" element={<ForgetPass />} />
+            </Routes>
+          </VideoProvider>
         </main>
         <CategoryBar />
       </div>
