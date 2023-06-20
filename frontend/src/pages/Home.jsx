@@ -8,10 +8,7 @@ function Home() {
 
   useEffect(() => {
     const shuffledVideos = [...allVideos].sort(() => Math.random() - 0.5);
-    const suggestions = shuffledVideos.slice(0, 3);
-    for (let i = 0; i < 3; i += 1) {
-      suggestions.push(...suggestions);
-    }
+    const suggestions = shuffledVideos.slice(0, 15);
     setSuggestedVideos(suggestions.slice(0, 15));
   }, [allVideos]);
 
@@ -19,9 +16,6 @@ function Home() {
     const categoryVideos = allVideos.filter(
       (video) => video.id_category === idCategory
     );
-    for (let i = 0; i < 3; i += 1) {
-      categoryVideos.push(...categoryVideos);
-    }
     return categoryVideos.slice(0, 15);
   };
 
