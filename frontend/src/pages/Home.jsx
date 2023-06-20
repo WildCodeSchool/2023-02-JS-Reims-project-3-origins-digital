@@ -1,30 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import VideoCarousel from "../components/VideoCarousel";
+import { VideoContext } from "../contexts/VideoContext";
 
 function Home() {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
-  const [allVideos, setAllVideos] = useState([]);
+  const [allVideos] = useContext(VideoContext);
 
   useEffect(() => {
-    fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/videos`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        const shuffledVideos = [...data].sort(() => Math.random() - 0.5);
-        const suggestions = shuffledVideos.slice(0, 3);
-        for (let i = 0; i < 3; i += 1) {
-          suggestions.push(...suggestions);
-        }
-        setAllVideos(data);
-        setSuggestedVideos(suggestions.slice(0, 15));
-      })
-      .catch((error) => {
-        console.error("Error fetching data: ", error);
-      });
-  }, []);
+    const shuffledVideos = [...allVideos].sort(() => Math.random() - 0.5);
+    const suggestions = shuffledVideos.slice(0, 3);
+    for (let i = 0; i < 3; i += 1) {
+      suggestions.push(...suggestions);
+    }
+    setSuggestedVideos(suggestions.slice(0, 15));
+  }, [allVideos]);
+
   const getVideosByCategory = (idCategory) => {
     const categoryVideos = allVideos.filter(
       (video) => video.id_category === idCategory
@@ -34,6 +24,7 @@ function Home() {
     }
     return categoryVideos.slice(0, 15);
   };
+
   const footballVideos = getVideosByCategory(1);
   const basketballVideos = getVideosByCategory(2);
   const tennisVideos = suggestedVideos;
