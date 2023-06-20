@@ -20,16 +20,13 @@ function CategoryPage() {
       (video) => video.id_category === idCategory
     );
     if (!categoryVideos.length) {
-      categoryVideos = shuffledVideos.slice(0, 3);
-    }
-    for (let i = 0; i < 3; i += 1) {
-      categoryVideos.push(...categoryVideos);
+      categoryVideos = shuffledVideos.slice(0, 15);
     }
     return categoryVideos.slice(0, 15);
   };
 
-  const videoElements = getVideosByCategory(categoryId).map((video, index) => (
-    <div key={`${video.id}+${index * 4}`}>
+  const videoElements = getVideosByCategory(categoryId).map((video) => (
+    <div key={video.id}>
       <h2>{video.title}</h2>
       <p>{video.description}</p>
       <img src={video.thumbnail_url} alt={video.title} />
