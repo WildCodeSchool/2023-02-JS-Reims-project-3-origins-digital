@@ -4,7 +4,7 @@ import { VideoContext } from "../contexts/VideoContext";
 
 function CategoryPage() {
   const { categoryName } = useParams();
-  const [allVideos] = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
   const categoryNameToIdMap = {
     Football: 1,
     Basketball: 2,
@@ -14,9 +14,9 @@ function CategoryPage() {
   };
 
   const categoryId = categoryNameToIdMap[categoryName];
-  const shuffledVideos = [...allVideos].sort(() => Math.random() - 0.5);
+  const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
   const getVideosByCategory = (idCategory) => {
-    let categoryVideos = allVideos.filter(
+    let categoryVideos = videos.filter(
       (video) => video.id_category === idCategory
     );
     if (!categoryVideos.length) {

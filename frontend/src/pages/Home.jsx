@@ -4,16 +4,16 @@ import { VideoContext } from "../contexts/VideoContext";
 
 function Home() {
   const [suggestedVideos, setSuggestedVideos] = useState([]);
-  const [allVideos] = useContext(VideoContext);
+  const { videos } = useContext(VideoContext);
 
   useEffect(() => {
-    const shuffledVideos = [...allVideos].sort(() => Math.random() - 0.5);
+    const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
     const suggestions = shuffledVideos.slice(0, 15);
     setSuggestedVideos(suggestions.slice(0, 15));
-  }, [allVideos]);
+  }, [videos]);
 
   const getVideosByCategory = (idCategory) => {
-    const categoryVideos = allVideos.filter(
+    const categoryVideos = videos.filter(
       (video) => video.id_category === idCategory
     );
     return categoryVideos.slice(0, 15);

@@ -14,12 +14,15 @@ export function VideoProvider({ children }) {
       .then((data) => setVideos(data));
   }, []);
 
-  const value = useMemo(() => [videos, setVideos], [videos]);
+  const value = useMemo(() => {
+    return { videos, setVideos };
+  }, [videos]);
 
   return (
     <VideoContext.Provider value={value}>{children}</VideoContext.Provider>
   );
 }
+
 VideoProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
