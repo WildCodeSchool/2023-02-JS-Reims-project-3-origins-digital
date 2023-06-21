@@ -40,6 +40,11 @@ button {
   text-decoration: none;
 }
 
+.background {
+  background-image: url(./images/fond.png);
+  background-attachment: fixed;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
