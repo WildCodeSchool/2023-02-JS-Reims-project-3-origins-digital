@@ -17,6 +17,7 @@
   color: white;
   border: none;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .category-icon {
@@ -50,5 +51,4 @@
     padding: 3em;
     gap: 9rem;
   }
-
 }

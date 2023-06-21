@@ -46,16 +46,38 @@ function Home() {
         slideNumber={3}
         videos={suggestedVideos}
         name="Suggestions"
+        carouselConfig={{ autoPlay: true }}
       />
-      <VideoCarousel slideNumber={4} videos={footballVideos} name="Football" />
+      <VideoCarousel
+        slideNumber={4}
+        videos={footballVideos}
+        name="Football"
+        carouselConfig={{ autoPlay: false }}
+      />
       <VideoCarousel
         slideNumber={4}
         videos={basketballVideos}
         name="Basketball"
+        carouselConfig={{ autoPlay: false }}
       />
-      <VideoCarousel slideNumber={4} videos={tennisVideos} name="Tennis" />
-      <VideoCarousel slideNumber={4} videos={swimmingVideos} name="Swimming" />
-      <VideoCarousel slideNumber={4} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel
+        slideNumber={4}
+        videos={tennisVideos}
+        name="Tennis"
+        carouselConfig={{ autoPlay: false }}
+      />
+      <VideoCarousel
+        slideNumber={4}
+        videos={swimmingVideos}
+        name="Swimming"
+        carouselConfig={{ autoPlay: false }}
+      />
+      <VideoCarousel
+        slideNumber={4}
+        videos={hockeyVideos}
+        name="Hockey"
+        carouselConfig={{ autoPlay: false }}
+      />
     </div>
   );
 }
