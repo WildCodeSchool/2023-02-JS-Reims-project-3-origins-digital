@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="layout">
+      <div className="layout background">
         <main className="main">
           <VideoProvider>
             <Routes>
