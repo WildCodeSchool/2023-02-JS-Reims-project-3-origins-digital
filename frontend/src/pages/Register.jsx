@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Register() {
-  const [name, setName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [mail, setMail] = useState("");
@@ -11,7 +11,7 @@ function Register() {
 
     // Construire l'objet utilisateur à envoyer à l'API
     const user = {
-      name,
+      username,
       password,
       confirmPassword,
       mail,
@@ -29,7 +29,7 @@ function Register() {
 
       if (response.ok) {
         // Réinitialiser les champs du formulaire si l'enregistrement est réussi
-        setName("");
+        setUsername("");
         setPassword("");
         setConfirmPassword("");
         setMail("");
@@ -55,8 +55,8 @@ function Register() {
             type="text"
             id="name"
             name="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
             required
           />
 

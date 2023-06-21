@@ -1,8 +1,8 @@
 CREATE TABLE `user` (
   id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
-  name VARCHAR(20) NOT NULL,
+  username VARCHAR(20) NOT NULL,
   mail VARCHAR(20) NOT NULL UNIQUE,
-  password VARCHAR(20) NOT NULL,
+  hashedPassword VARCHAR(200) NOT NULL,
   is_admin BOOLEAN NOT NULL DEFAULT FALSE
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE `like` (
   CONSTRAINT `fk_like_video` FOREIGN KEY (id_video) REFERENCES `video`(id)
 );
 
-INSERT INTO `user` (name, mail, password, is_admin) VALUES ('user', 'user@origins.ju', 'azerty', FALSE), ('admin', 'admin@origins.ju', 'azerty', TRUE);
+INSERT INTO `user` (username, mail, hashedPassword, is_admin) VALUES ('username', 'user@origins.ju', 'azerty', FALSE), ('admin', 'admin@origins.ju', 'azerty', TRUE);
 
 INSERT INTO category (title) VALUES ('football'),('basketball'),('tennis'),('swimming'),('hockey');
 
