@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useSearchParams } from "react-router-dom";
+import { VideoContext } from "../contexts/VideoContext";
 
 function Search() {
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
+  const { videos } = useContext(VideoContext);
+  const resultsVideos = videos.filter(
+    (video) =>
+      video.title.toLowerCase().includes(query.toLowerCase()) ||
+      video.description.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
-    <div>
-      <h1>Search Results for: {query}</h1>
-      <p>Videos Soon...stay Connected</p>
+    <div style={{ textAlign: "center" }}>
+      <h1>les resultats de la recherche: {query}</h1>
+      {resultsVideos.length > 0 ? (
+        resultsVideos.map((video) => (
+          <div key={video.id}>
+            <h2>{video.title}</h2>
+            <p>{video.description}</p>
+            <img src={video.thumbnail_url} alt={video.title} />
+          </div>
+        ))
+      ) : (
+        <p>aucune video pour la recherche</p>
+      )}
     </div>
   );
 }

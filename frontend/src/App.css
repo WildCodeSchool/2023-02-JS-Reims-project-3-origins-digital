@@ -59,6 +59,11 @@ button {
   text-decoration: none;
 }
 
+.background {
+  background-image: url(./images/fond.png);
+  background-attachment: fixed;
+}
+
 .layout {
   display: flex;
   flex-direction: column;
@@ -271,26 +276,69 @@ section {
   align-items: center;
 }
 
-.formulaire label,
-.formulaire input {
-  margin: 10px;
-  font-family: "Kanit";
-}
-input {
-  color: black;
-}
-.formulaire input[type="submit"] {
-  margin: 10px;
-  background-color: #444;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
+/* ---- FORM LOGIN ----- */
 
 .formulaire {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #192b6b;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.formulaire label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.formulaire input,
+.formulaire select,
+.formulaire textarea {
+  display: block;
+  margin-bottom: 30px;
+  border: 5px solid #ffffff;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+}
+
+.formulaire button[type="submit"] {
+  background-color: #08d;
+  color: #ffffff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.formulaire button[type="submit"]:hover {
+  background-color: #0050c6;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  margin: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

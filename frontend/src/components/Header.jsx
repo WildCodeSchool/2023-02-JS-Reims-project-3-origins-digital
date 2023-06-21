@@ -42,7 +42,7 @@ function Header() {
 
   return (
     <header className="header">
-      <Link to="/connexion" className="header_button">
+      <Link to="/login" className="header_button">
         Connexion
       </Link>
       <Link to="/">
