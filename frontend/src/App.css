@@ -59,7 +59,6 @@ button {
 
 .search-container input[type="text"] {
   border: none;
-  padding: 5px;
   border-radius: 5px;
   color: black;
 }
@@ -73,6 +72,39 @@ button {
 
 .main {
   flex-grow: 1;
+}
+
+.imgCategory {
+  width: 20rem;
+  height: 20rem;
+}
+
+.imgSearch {
+  width: 2rem;
+  height: 2rem;
+}
+
+.thumbnails-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.thumbnail {
+  text-align: center;
+}
+
+.legend {
+  border-radius: 1rem;
+  background: whitesmoke;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.titleCategory {
+  font-size: xx-large;
 }
 
 @media (min-width: 768px) {
@@ -300,13 +332,6 @@ section {
 
 .formulaire button[type="submit"]:hover {
   background-color: #0050c6;
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  margin: 10px;
 }
 
 h1,

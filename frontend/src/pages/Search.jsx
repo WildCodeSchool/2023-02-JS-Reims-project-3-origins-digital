@@ -14,17 +14,21 @@ function Search() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>les resultats de la recherche: {query}</h1>
+      <h1>Les resultats de la recherche: {query}</h1>
       {resultsVideos.length > 0 ? (
         resultsVideos.map((video) => (
           <div key={video.id}>
             <h2>{video.title}</h2>
             <p>{video.description}</p>
-            <img src={video.thumbnail_url} alt={video.title} />
+            <img
+              className="imgSearch"
+              src={video.thumbnail_url}
+              alt={video.title}
+            />
           </div>
         ))
       ) : (
-        <p>aucune video pour la recherche</p>
+        <p>Aucune video pour la recherche</p>
       )}
     </div>
   );
