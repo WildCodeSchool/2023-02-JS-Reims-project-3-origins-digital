@@ -9,7 +9,7 @@ function CategoryPage() {
     Football: 1,
     Basketball: 2,
     Tennis: 3,
-    Swimming: 4,
+    Natation: 4,
     Hockey: 5,
   };
 
