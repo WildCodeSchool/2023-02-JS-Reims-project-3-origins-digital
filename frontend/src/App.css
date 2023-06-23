@@ -307,12 +307,16 @@ section {
   font-weight: bold;
 }
 
+.login {
+  background-color: #000000;
+}
+
 .formulaire input,
 .formulaire select,
 .formulaire textarea {
   display: block;
-  margin-bottom: 30px;
-  border: 5px solid #ffffff;
+  margin-bottom: 40px;
+  border: 0px solid #0d1b4a;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -320,10 +324,10 @@ section {
 }
 
 .formulaire button[type="submit"] {
-  background-color: #08d;
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
   border: none;
-  border-radius: 3px;
+  border-radius: 15px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
