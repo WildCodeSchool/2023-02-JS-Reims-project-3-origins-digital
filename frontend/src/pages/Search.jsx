@@ -20,12 +20,12 @@ function Search() {
           {resultsVideos.map((video) => (
             <div key={video.id} className="thumbnail">
               <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-              <h2 className="legend">{video.title}</h2>
-              <img
-                className="imgCategory"
-                src={video.thumbnail_url}
-                alt={video.title}
-              />
+                <h2 className="legend">{video.title}</h2>
+                <img
+                  className="imgCategory"
+                  src={video.thumbnail_url}
+                  alt={video.title}
+                />
               </Link>
             </div>
           ))}

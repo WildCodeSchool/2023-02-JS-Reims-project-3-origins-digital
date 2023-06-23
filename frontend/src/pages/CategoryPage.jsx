@@ -28,13 +28,13 @@ function CategoryPage() {
   const videoElements = getVideosByCategory(categoryId).map((video) => (
     <div key={video.id} className="thumbnail">
       <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-      <h2 className="legend">{video.title}</h2>
-      <img
-        src={video.thumbnail_url}
-        alt={video.title}
-        className="imgCategory"
-      />
-      </link>
+        <h2 className="legend">{video.title}</h2>
+        <img
+          src={video.thumbnail_url}
+          alt={video.title}
+          className="imgCategory"
+        />
+      </Link>
     </div>
   ));
 
