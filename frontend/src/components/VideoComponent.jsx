@@ -17,26 +17,24 @@ function VideoComponent() {
       })
       .catch((error) => {
         console.error(
-          "Une erreur s'est produite lors de la récupération de la video :",
+          "Une erreur s'est produite lors de la récupération de la vidéo :",
           error
         );
       });
   }, [vidId]);
   return (
-    <div>
-      <figure key={video.id}>
-        <figcaption>{video.title}</figcaption>
-        <iframe
-          title={video.title}
-          width="440"
-          height="365"
-          src={`${video.url}?autoplay=1`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-        <figcaption>{video.description}</figcaption>
-      </figure>
-    </div>
+    <figure>
+      <figcaption>{video.title}</figcaption>
+      <iframe
+        title={video.title}
+        width="440"
+        height="365"
+        src={`${video.url}?autoplay=1`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+      <figcaption>{video.description}</figcaption>
+    </figure>
   );
 }
 
