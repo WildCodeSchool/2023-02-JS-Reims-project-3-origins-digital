@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { VideoContext } from "../contexts/VideoContext";
 
 function Search() {
@@ -19,12 +19,14 @@ function Search() {
         <div className="thumbnails-container">
           {resultsVideos.map((video) => (
             <div key={video.id} className="thumbnail">
+              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
               <h2 className="legend">{video.title}</h2>
               <img
                 className="imgCategory"
                 src={video.thumbnail_url}
                 alt={video.title}
               />
+              </Link>
             </div>
           ))}
         </div>

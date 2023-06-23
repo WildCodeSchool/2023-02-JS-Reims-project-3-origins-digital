@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { VideoContext } from "../contexts/VideoContext";
 
 function CategoryPage() {
@@ -27,12 +27,14 @@ function CategoryPage() {
 
   const videoElements = getVideosByCategory(categoryId).map((video) => (
     <div key={video.id} className="thumbnail">
+      <Link key={`${video.id}`} to={`/videos/${video.id}`}>
       <h2 className="legend">{video.title}</h2>
       <img
         src={video.thumbnail_url}
         alt={video.title}
         className="imgCategory"
       />
+      </link>
     </div>
   ));
 
