@@ -35,8 +35,6 @@ function Login() {
 
   return (
     <div className="container">
-      <img src="chemin/vers/logo.png" alt="Logo" />
-
       <form onSubmit={handleSubmit}>
         <div className="formulaire">
           <label htmlFor="username">Nom d'utilisateur</label>
