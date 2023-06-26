@@ -21,9 +21,9 @@ function Home() {
 
   const footballVideos = getVideosByCategory(1);
   const basketballVideos = getVideosByCategory(2);
-  const tennisVideos = suggestedVideos;
-  const swimmingVideos = suggestedVideos;
-  const hockeyVideos = suggestedVideos;
+  const tennisVideos = getVideosByCategory(3);
+  const natationVideos = getVideosByCategory(4);
+  const hockeyVideos = getVideosByCategory(5);
 
   return (
     <div>
@@ -39,7 +39,7 @@ function Home() {
         name="Basketball"
       />
       <VideoCarousel slideNumber={4} videos={tennisVideos} name="Tennis" />
-      <VideoCarousel slideNumber={4} videos={swimmingVideos} name="Swimming" />
+      <VideoCarousel slideNumber={4} videos={natationVideos} name="Natation" />
       <VideoCarousel slideNumber={4} videos={hockeyVideos} name="Hockey" />
     </div>
   );

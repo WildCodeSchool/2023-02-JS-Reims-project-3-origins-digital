@@ -94,7 +94,7 @@ function Register() {
             required
           />
 
-          <input type="submit" value="S'inscrire" />
+          <input type="submit" className="login" value="S'inscrire" />
         </form>
       </div>
     </div>
