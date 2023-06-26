@@ -280,6 +280,7 @@ section {
 .formulaire textarea {
   display: block;
   margin-bottom: 30px;
+  color: black;
   border: 5px solid #ffffff;
   border-radius: 15px;
   padding: 10px;

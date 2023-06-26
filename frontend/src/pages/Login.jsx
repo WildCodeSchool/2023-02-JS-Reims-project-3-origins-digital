@@ -14,7 +14,7 @@ function Login() {
     event.preventDefault();
 
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3000"}/login`,
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5001"}/login`,
       {
         method: "post",
         headers: {
@@ -35,8 +35,6 @@ function Login() {
 
   return (
     <div className="container">
-      <img src="chemin/vers/logo.png" alt="Logo" />
-
       <form onSubmit={handleSubmit}>
         <div className="formulaire">
           <label htmlFor="username">Nom d'utilisateur</label>
