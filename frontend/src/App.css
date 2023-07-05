@@ -124,8 +124,9 @@ button {
   font-size: xx-large;
 }
 
-.windowsVideo {
-  background-color: #0050c6;
+.video {
+  width: 50rem !important;
+  height: 30rem !important;
 }
 
 .video {
