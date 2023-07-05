@@ -1,8 +1,12 @@
 import React, { useContext } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { VideoContext } from "../contexts/VideoContext";
+import Logo from "../images/logo RGB Original Digital.png";
+import { useAuth } from "../contexts/AuthContext";
 
 function Search() {
+  const { token } = useAuth();
+
   const [searchParams] = useSearchParams();
   const query = searchParams.get("q");
   const { videos } = useContext(VideoContext);
@@ -17,18 +21,29 @@ function Search() {
       <h1>Les résultats de la recherche: {query}</h1>
       {resultsVideos.length > 0 ? (
         <div className="thumbnails-container">
-          {resultsVideos.map((video) => (
-            <div key={video.id} className="thumbnail">
-              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-                <h2 className="legend">{video.title}</h2>
-                <img
-                  className="imgCategory"
-                  src={video.thumbnail_url}
-                  alt={video.title}
-                />
-              </Link>
-            </div>
-          ))}
+          {resultsVideos.map((video) =>
+            video.is_public || (!video.is_public && token) ? (
+              <div key={video.id} className="thumbnail">
+                <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+                  <h2 className="legend">{video.title}</h2>
+                  <img
+                    className="imgCategory"
+                    src={video.thumbnail_url}
+                    alt={video.title}
+                  />
+                </Link>
+              </div>
+            ) : (
+              <div key={video.id} className="thumbnail">
+                <Link to="/login">
+                  <h2 className="legend">
+                    Pour Voir {video.title} il faut se connecter
+                  </h2>
+                  <img src={Logo} alt="Connecte Toi" className="LogoF" />
+                </Link>
+              </div>
+            )
+          )}
         </div>
       ) : (
         <p>Aucune vidéo trouvée pour la recherche</p>
