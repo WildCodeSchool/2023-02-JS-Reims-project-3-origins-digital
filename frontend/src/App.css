@@ -129,9 +129,11 @@ button {
   height: 30rem !important;
 }
 
-.video {
-  height: 10rem;
-  width: 10rem;
+.windowsVideo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width: 768px) {
