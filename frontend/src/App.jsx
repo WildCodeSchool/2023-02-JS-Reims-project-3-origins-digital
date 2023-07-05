@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import Search from "./pages/Search";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import ForgetPass from "./pages/ForgetPass";
 import Home from "./pages/Home";
 import VideoComponent from "./components/VideoComponent";
 import "./App.css";
@@ -29,7 +28,6 @@ function App() {
               <Route path="/videos/:id" element={<VideoComponent />} />
               <Route path="/login" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
-              <Route path="/forgetpass" element={<ForgetPass />} />
             </Routes>
           </VideoProvider>
         </main>
