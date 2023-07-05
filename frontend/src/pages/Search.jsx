@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 import { VideoContext } from "../contexts/VideoContext";
 
 function Search() {
@@ -14,17 +14,24 @@ function Search() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>les resultats de la recherche: {query}</h1>
+      <h1>Les résultats de la recherche: {query}</h1>
       {resultsVideos.length > 0 ? (
-        resultsVideos.map((video) => (
-          <div key={video.id}>
-            <h2>{video.title}</h2>
-            <p>{video.description}</p>
-            <img src={video.thumbnail_url} alt={video.title} />
-          </div>
-        ))
+        <div className="thumbnails-container">
+          {resultsVideos.map((video) => (
+            <div key={video.id} className="thumbnail">
+              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+                <h2 className="legend">{video.title}</h2>
+                <img
+                  className="imgCategory"
+                  src={video.thumbnail_url}
+                  alt={video.title}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
       ) : (
-        <p>aucune video pour la recherche</p>
+        <p>Aucune vidéo trouvée pour la recherche</p>
       )}
     </div>
   );

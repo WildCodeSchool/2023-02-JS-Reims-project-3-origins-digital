@@ -6,7 +6,7 @@ function CategoryBar() {
     { name: "Football", icon: "sports_soccer" },
     { name: "Basketball", icon: "sports_basketball" },
     { name: "Tennis", icon: "sports_tennis" },
-    { name: "Swimming", icon: "pool" },
+    { name: "Natation", icon: "pool" },
     { name: "Hockey", icon: "sports_hockey" },
   ];
   return (

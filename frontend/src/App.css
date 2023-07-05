@@ -59,7 +59,6 @@ button {
 
 .search-container input[type="text"] {
   border: none;
-  padding: 5px;
   border-radius: 5px;
   color: black;
 }
@@ -73,6 +72,49 @@ button {
 
 .main {
   flex-grow: 1;
+}
+
+.imgCategory {
+  width: 20rem;
+  height: auto;
+  height: 10rem;
+}
+
+.imgSearch {
+  width: 2rem;
+  height: 2rem;
+}
+
+.thumbnails-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.thumbnail {
+  text-align: center;
+}
+
+.legend {
+  border-radius: 1rem;
+  background: whitesmoke;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.titleCategory {
+  font-size: xx-large;
+}
+
+.windowsVideo {
+  background-color: #0050c6;
+}
+
+.video {
+  height: 10rem;
+  width: 10rem;
 }
 
 @media (min-width: 768px) {
@@ -190,6 +232,7 @@ section {
   padding: 1em 4em;
   font-weight: bold;
   margin-top: 1em;
+  cursor: pointer;
 }
 
 .logoFooter {
@@ -275,12 +318,17 @@ section {
   font-weight: bold;
 }
 
+.login {
+  background-color: #000000;
+}
+
 .formulaire input,
 .formulaire select,
 .formulaire textarea {
   display: block;
-  margin-bottom: 30px;
-  border: 5px solid #ffffff;
+  margin-bottom: 40px;
+  color: black;
+  border: 0px solid #0d1b4a;
   border-radius: 15px;
   padding: 10px;
   width: 100%;
@@ -288,10 +336,10 @@ section {
 }
 
 .formulaire button[type="submit"] {
-  background-color: #08d;
+  background-color: rgb(0, 0, 0);
   color: #ffffff;
   border: none;
-  border-radius: 3px;
+  border-radius: 15px;
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
@@ -300,13 +348,6 @@ section {
 
 .formulaire button[type="submit"]:hover {
   background-color: #0050c6;
-}
-
-*,
-*:after,
-*:before {
-  box-sizing: border-box;
-  margin: 10px;
 }
 
 h1,

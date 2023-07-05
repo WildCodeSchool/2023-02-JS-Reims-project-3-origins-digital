@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { Link } from "react-router-dom";
 
 function VideoCarousel({ videos, name, slideNumber }) {
   const [slideNum, setSlideNum] = useState(slideNumber);
@@ -38,10 +39,10 @@ function VideoCarousel({ videos, name, slideNumber }) {
         axis="horizontal"
       >
         {videos.map((video) => (
-          <div key={`${video.id}`}>
+          <Link key={`${video.id}`} to={`/videos/${video.id}`}>
             <img src={video.thumbnail_url} alt={video.title} />
             <p className="legend">{video.title}</p>
-          </div>
+          </Link>
         ))}
       </Carousel>
     </div>
