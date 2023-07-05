@@ -1,4 +1,4 @@
-const argon2 = require("argon2");
+const argon2 = require("@node-rs/argon2");
 const jwt = require("jsonwebtoken");
 
 const hashingOptions = {
