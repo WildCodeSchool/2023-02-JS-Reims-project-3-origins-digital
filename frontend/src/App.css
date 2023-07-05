@@ -125,8 +125,8 @@ button {
 }
 
 .video {
-  width: 50rem !important;
-  height: 30rem !important;
+  width: 20rem !important;
+  height: 20rem !important;
 }
 
 .windowsVideo {
@@ -142,6 +142,11 @@ button {
   }
   .header {
     flex-direction: row-reverse;
+  }
+
+  .video {
+    width: 50rem !important;
+    height: 40rem !important;
   }
 }
 
