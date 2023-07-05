@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import Logo from "../images/logo RGB Original Digital.png";
+import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
   const navigate = useNavigate();
+  const { token, setToken } = useAuth();
   const [searchVisible, setSearchVisible] = useState(false);
   const [search, setSearch] = useState("");
   const searchButtonRef = useRef(null);
@@ -40,11 +42,22 @@ function Header() {
     setSearchVisible(!searchVisible);
   };
 
+  const handleLogout = () => {
+    setToken(null);
+    navigate("/login");
+  };
+
   return (
     <header className="header">
-      <Link to="/login" className="header_button">
-        Connexion
-      </Link>
+      {token ? (
+        <Link to="/" className="header_button" onClick={handleLogout}>
+          Déconnexion
+        </Link>
+      ) : (
+        <Link to="/login" className="header_button">
+          Connexion
+        </Link>
+      )}
       <Link to="/">
         <img src={Logo} alt="logo Origins digital" className="headerLogo" />
       </Link>

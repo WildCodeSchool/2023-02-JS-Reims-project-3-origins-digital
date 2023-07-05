@@ -77,6 +77,7 @@ button {
 .imgCategory {
   width: 20rem;
   height: auto;
+  height: 10rem;
 }
 
 .imgSearch {
@@ -326,6 +327,7 @@ section {
 .formulaire textarea {
   display: block;
   margin-bottom: 40px;
+  color: black;
   border: 0px solid #0d1b4a;
   border-radius: 15px;
   padding: 10px;

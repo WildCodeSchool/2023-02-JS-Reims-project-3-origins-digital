@@ -14,7 +14,7 @@ function Login() {
     event.preventDefault();
 
     fetch(
-      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3000"}/login`,
+      `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5001"}/login`,
       {
         method: "post",
         headers: {
