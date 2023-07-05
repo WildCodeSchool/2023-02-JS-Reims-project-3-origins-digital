@@ -41,32 +41,21 @@ function VideoCarousel({ videos, name, slideNumber }) {
         centerSlidePercentage={100 / slideNum}
         axis="horizontal"
       >
-        {videos.map((video) => {
-          if (video.is_public) {
-            return (
-              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-                <img src={video.thumbnail_url} alt={video.title} />
-                <p className="legend">{video.title}</p>
-              </Link>
-            );
-          }
-          if (!video.is_public && token) {
-            return (
-              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-                <img src={video.thumbnail_url} alt={video.title} />
-                <p className="legend">{video.title}</p>
-              </Link>
-            );
-          }
-          return (
+        {videos.map((video) =>
+          video.is_public || (!video.is_public && token) ? (
+            <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+              <img src={video.thumbnail_url} alt={video.title} />
+              <p className="legend">{video.title}</p>
+            </Link>
+          ) : (
             <Link to="/login">
               <img className="LogoF" src={Logo} alt="connecte toi" />
               <p className="legend">
                 pour voir {video.title} il faut se connecter
               </p>
             </Link>
-          );
-        })}
+          )
+        )}
       </Carousel>
     </div>
   );
