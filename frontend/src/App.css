@@ -135,6 +135,11 @@ button {
   flex-direction: column;
   align-items: center;
 }
+.links {
+  gap: 1rem;
+  display: grid;
+  margin: 1rem;
+}
 
 @media (min-width: 768px) {
   .layout {
@@ -351,7 +356,6 @@ section {
 .formulaire textarea {
   display: block;
   margin-bottom: 40px;
-  color: black;
   border: 0px solid #0d1b4a;
   border-radius: 15px;
   padding: 10px;

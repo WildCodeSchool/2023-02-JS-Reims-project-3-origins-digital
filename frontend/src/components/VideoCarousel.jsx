@@ -25,7 +25,7 @@ function VideoCarousel({ videos, name, slideNumber }) {
         showIndicators={false}
         infiniteLoop
         showThumbs={false}
-        autoPlay
+        autoPlay={false}
         interval={5000}
         transitionTime={500}
         swipeable
