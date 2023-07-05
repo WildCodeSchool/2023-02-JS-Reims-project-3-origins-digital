@@ -29,36 +29,19 @@ function CategoryPage() {
     return categoryVideos.slice(0, 15);
   };
 
-  const videoElements = getVideosByCategory(categoryId).map((video) => {
-    if (video.is_public) {
-      return (
-        <div key={video.id} className="thumbnail">
-          <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-            <h2 className="legend">{video.title}</h2>
-            <img
-              src={video.thumbnail_url}
-              alt={video.title}
-              className="imgCategory"
-            />
-          </Link>
-        </div>
-      );
-    }
-    if (!video.is_public && token) {
-      return (
-        <div key={video.id} className="thumbnail">
-          <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-            <h2 className="legend">{video.title}</h2>
-            <img
-              src={video.thumbnail_url}
-              alt={video.title}
-              className="imgCategory"
-            />
-          </Link>
-        </div>
-      );
-    }
-    return (
+  const videoElements = getVideosByCategory(categoryId).map((video) =>
+    video.is_public || (!video.is_public && token) ? (
+      <div key={video.id} className="thumbnail">
+        <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+          <h2 className="legend">{video.title}</h2>
+          <img
+            src={video.thumbnail_url}
+            alt={video.title}
+            className="imgCategory"
+          />
+        </Link>
+      </div>
+    ) : (
       <div key={video.id} className="thumbnail">
         <Link to="/login">
           <h2 className="legend">
@@ -67,8 +50,8 @@ function CategoryPage() {
           <img src={Logo} alt="Connecte Toi" className="LogoF" />
         </Link>
       </div>
-    );
-  });
+    )
+  );
 
   return (
     <div style={{ textAlign: "center" }}>
