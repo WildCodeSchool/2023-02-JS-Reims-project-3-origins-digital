@@ -1,17 +1,12 @@
 .category-bar {
   display: flex;
   flex-direction: row;
-  position: sticky;
-  top: 0;
+  position: fixed;
   bottom: 0;
   padding: 1rem;
   justify-content: space-between;
-  z-index: 50;
-  flex-direction: column;
-  top: 0;
-  left: 0;
-  padding: 3em;
-  gap: 9rem;
+  background-color: black;
+  width: 93%;
 }
 
 .category-button {
@@ -46,18 +41,17 @@
   color: white;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .category-bar {
     display: flex;
-    flex-direction: row;
-    position: fixed;
+    position: sticky;
+    background-color: transparent;
     bottom: 0;
-    padding: 1rem;
     justify-content: space-between;
-    background-color: black;
-    width: 93%;
-    gap: initial;
-    top: initial;
-    z-index: initial;
+    z-index: 50;
+    flex-direction: column;
+    top: 0;
+    left: 0;
+    gap: 9rem;
   }
 }
