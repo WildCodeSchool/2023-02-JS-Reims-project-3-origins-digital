@@ -48,7 +48,6 @@ function Login() {
 
             <div className="links">
               <Link to="/inscription">Inscription</Link>
-              <Link to="/forgetpass">Mot de passe oublié ?</Link>
             </div>
           </div>
         </div>
