@@ -23,8 +23,8 @@ function VideoComponent() {
       });
   }, [vidId]);
   return (
-    <figure>
-      <figcaption>{video.title}</figcaption>
+    <figure className="windowsVideo">
+      <figcaption className="video">{video.title}</figcaption>
       <iframe
         title={video.title}
         width="440"
