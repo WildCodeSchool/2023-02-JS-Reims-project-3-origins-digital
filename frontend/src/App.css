@@ -76,7 +76,7 @@ button {
 
 .imgCategory {
   width: 20rem;
-  height: 20rem;
+  height: auto;
 }
 
 .imgSearch {
@@ -105,6 +105,15 @@ button {
 
 .titleCategory {
   font-size: xx-large;
+}
+
+.windowsVideo {
+  background-color: #0050c6;
+}
+
+.video {
+  height: 10rem;
+  width: 10rem;
 }
 
 @media (min-width: 768px) {
@@ -222,6 +231,7 @@ section {
   padding: 1em 4em;
   font-weight: bold;
   margin-top: 1em;
+  cursor: pointer;
 }
 
 .logoFooter {
