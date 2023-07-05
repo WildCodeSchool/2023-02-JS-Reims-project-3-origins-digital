@@ -19,7 +19,7 @@ function VideoCarousel({ videos, name, slideNumber }) {
   }, [slideNumber]);
   return (
     <div className="video-carousel">
-      <h1>{name}</h1>
+      <h1 className="nameCarousel">{name}</h1>
       <Carousel
         showStatus={false}
         showIndicators={false}

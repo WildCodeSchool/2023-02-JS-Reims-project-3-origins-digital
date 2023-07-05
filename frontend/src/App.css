@@ -141,6 +141,10 @@ button {
   margin: 1rem;
 }
 
+.nameCarousel {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .layout {
     flex-direction: row-reverse;

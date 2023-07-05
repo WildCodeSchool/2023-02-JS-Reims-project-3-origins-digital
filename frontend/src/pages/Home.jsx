@@ -32,15 +32,15 @@ function Home() {
         videos={suggestedVideos}
         name="Suggestions"
       />
-      <VideoCarousel slideNumber={4} videos={footballVideos} name="Football" />
+      <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
       <VideoCarousel
-        slideNumber={4}
+        slideNumber={3}
         videos={basketballVideos}
         name="Basketball"
       />
-      <VideoCarousel slideNumber={4} videos={tennisVideos} name="Tennis" />
-      <VideoCarousel slideNumber={4} videos={natationVideos} name="Natation" />
-      <VideoCarousel slideNumber={4} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel slideNumber={3} videos={tennisVideos} name="Tennis" />
+      <VideoCarousel slideNumber={3} videos={natationVideos} name="Natation" />
+      <VideoCarousel slideNumber={3} videos={hockeyVideos} name="Hockey" />
     </div>
   );
 }
