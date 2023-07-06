@@ -4,7 +4,6 @@ function AdminPage() {
   const [message, setMessage] = useState("");
 
   const addVideo = () => {
-    // Code pour ajouter une vidéo
     setMessage("Vidéo ajoutée !");
   };
 

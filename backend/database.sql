@@ -44,8 +44,6 @@ CREATE TABLE `like` (
   CONSTRAINT `fk_like_video` FOREIGN KEY (id_video) REFERENCES `video`(id)
 );
 
-INSERT INTO `user` (username, mail, hashedPassword, is_admin) VALUES ('username', 'user@origins.ju', 'azerty', FALSE), ('admin', 'admin@origins.ju', 'azerty', TRUE);
-
 INSERT INTO category (title) VALUES ('football'),('basketball'),('tennis'),('natation'),('hockey');
 
 INSERT INTO video (title, description, url, thumbnail_url, time, id_category) VALUES
