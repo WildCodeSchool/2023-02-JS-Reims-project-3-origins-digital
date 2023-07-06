@@ -7,10 +7,15 @@ function DeleteVideo() {
 
   const fetchVideos = async () => {
     try {
-      // Code pour récupérer toutes les vidéos de la base de données
-      const response = await fetch("http://localhost:5002/videos"); // Remplacez "/api/videos" par l'URL de votre endpoint API pour récupérer les vidéos
-      const data = await response.json();
-      setVideos(data);
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL}/videos`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        setVideos(data);
+      } else {
+        throw new Error("Erreur lors de la récupération des vidéos");
+      }
     } catch (error) {
       console.error("Erreur lors de la récupération des vidéos :", error);
     }
