@@ -23,25 +23,21 @@ function Search() {
         <div className="thumbnails-container">
           {resultsVideos.map((video) =>
             video.is_public || (!video.is_public && token) ? (
-              <div key={video.id} className="thumbnail">
-                <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-                  <h2 className="legend">{video.title}</h2>
-                  <img
-                    className="imgCategory"
-                    src={video.thumbnail_url}
-                    alt={video.title}
-                  />
-                </Link>
-              </div>
+              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+                <h2 className="legend">{video.title}</h2>
+                <img
+                  className="imgCategory"
+                  src={video.thumbnail_url}
+                  alt={video.title}
+                />
+              </Link>
             ) : (
-              <div key={video.id} className="thumbnail">
-                <Link to="/login">
-                  <h2 className="legend">
-                    Pour Voir {video.title} il faut se connecter
-                  </h2>
-                  <img src={Logo} alt="Connecte Toi" className="LogoF" />
-                </Link>
-              </div>
+              <Link to="/login">
+                <h2 className="legend">
+                  Pour Voir {video.title} il faut se connecter
+                </h2>
+                <img src={Logo} alt="Connecte Toi" className="logo-f" />
+              </Link>
             )
           )}
         </div>

@@ -49,7 +49,7 @@ function VideoCarousel({ videos, name, slideNumber }) {
             </Link>
           ) : (
             <Link to="/login">
-              <img className="LogoF" src={Logo} alt="connecte toi" />
+              <img className="logo-f" src={Logo} alt="connecte toi" />
               <p className="legend">
                 pour voir {video.title} il faut se connecter
               </p>

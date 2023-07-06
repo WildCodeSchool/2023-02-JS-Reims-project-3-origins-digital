@@ -47,7 +47,7 @@ function CategoryPage() {
           <h2 className="legend">
             Pour Voir {video.title} il faut se connecter
           </h2>
-          <img src={Logo} alt="Connecte Toi" className="LogoF" />
+          <img src={Logo} alt="Connecte Toi" className="logo-f" />
         </Link>
       </div>
     )
