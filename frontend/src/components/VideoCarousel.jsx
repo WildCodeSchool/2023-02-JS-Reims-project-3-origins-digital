@@ -3,10 +3,13 @@ import PropTypes from "prop-types";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
+import Logo from "../images/logo RGB Original Digital.png";
 
 function VideoCarousel({ videos, name, slideNumber }) {
-  const [slideNum, setSlideNum] = useState(slideNumber);
+  const { token } = useAuth();
 
+  const [slideNum, setSlideNum] = useState(slideNumber);
   useEffect(() => {
     const updateSlidesNumber = () => {
       setSlideNum(window.innerWidth <= 768 ? 1 : slideNumber);
@@ -38,12 +41,21 @@ function VideoCarousel({ videos, name, slideNumber }) {
         centerSlidePercentage={100 / slideNum}
         axis="horizontal"
       >
-        {videos.map((video) => (
-          <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-            <img src={video.thumbnail_url} alt={video.title} />
-            <p className="legend">{video.title}</p>
-          </Link>
-        ))}
+        {videos.map((video) =>
+          video.is_public || (!video.is_public && token) ? (
+            <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+              <img src={video.thumbnail_url} alt={video.title} />
+              <p className="legend">{video.title}</p>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <img className="logo-f" src={Logo} alt="connecte toi" />
+              <p className="legend">
+                pour voir {video.title} il faut se connecter
+              </p>
+            </Link>
+          )
+        )}
       </Carousel>
     </div>
   );
