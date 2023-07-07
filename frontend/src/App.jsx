@@ -10,7 +10,6 @@ import Home from "./pages/Home";
 import VideoComponent from "./components/VideoComponent";
 import "./App.css";
 import { VideoProvider } from "./contexts/VideoContext";
-import EditVideo from "./components/EditVideo";
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
         <CategoryBar />
       </div>
       <Footer />
-      <EditVideo />
     </div>
   );
 }
