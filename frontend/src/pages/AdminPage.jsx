@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { LuEdit } from "react-icons/lu";
 import { AiFillFileAdd, AiFillHome } from "react-icons/ai";
+import DeleteVideo from "../components/DeleteVideo";
 
 function AdminPage() {
   const [message, setMessage] = useState("");
@@ -15,7 +16,6 @@ function AdminPage() {
   };
 
   const deleteVideo = () => {
-    // Code pour supprimer une vidéo
     setMessage("Vidéo supprimée !");
   };
 
@@ -38,7 +38,7 @@ function AdminPage() {
           <LuEdit size={50} color="black" /> Modifié
         </button>
         <button type="button" onClick={deleteVideo}>
-          <FaTrash size={50} color="black" /> Supprimé
+          <FaTrash size={50} color="black" /> <DeleteVideo />;
         </button>
       </div>
 
