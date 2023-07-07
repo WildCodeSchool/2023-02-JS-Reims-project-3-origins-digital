@@ -1,12 +1,12 @@
 .category-bar {
   display: flex;
   flex-direction: row;
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  padding: 1rem;
-  justify-content: space-between;
+  padding: 1rem 0;
+  justify-content: space-around;
   background-color: black;
-  width: 93%;
+  width: 100%;
 }
 
 .category-button {

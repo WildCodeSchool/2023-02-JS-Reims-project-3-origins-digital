@@ -10,20 +10,20 @@ function CategoryBar() {
     { name: "Hockey", icon: "sports_hockey" },
   ];
   return (
-    <nav>
-      <div className="category-bar">
-        {sports.map((sport) => (
-          <Link
-            key={sport.name}
-            className="category-button"
-            to={`/category/${sport.name}`}
-          >
-            <span className="material-icons">{sport.icon}</span>
-            {sport.name}
-          </Link>
-        ))}
-      </div>
-    </nav>
+    // <nav>
+    <div className="category-bar">
+      {sports.map((sport) => (
+        <Link
+          key={sport.name}
+          className="category-button"
+          to={`/category/${sport.name}`}
+        >
+          <span className="material-icons">{sport.icon}</span>
+          {sport.name}
+        </Link>
+      ))}
+    </div>
+    // </nav>
   );
 }
 export default CategoryBar;
