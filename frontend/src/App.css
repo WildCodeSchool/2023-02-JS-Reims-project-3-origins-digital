@@ -434,3 +434,26 @@ input {
 textarea {
   color: #000000;
 }
+
+.linkButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  color: #000000;
+  border: 1px solid #000000;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  border-radius: 1rem;
+  width: 20rem;
+  height: 10rem;
+}
+
+.linkButton:hover {
+  background-color: #e0e0e0;
+}
+
+button {
+  color: #ffffff;
+}
