@@ -7,7 +7,7 @@ function Login() {
   const usernameRef = useRef();
   const passwordRef = useRef();
 
-  const { setToken } = useAuth();
+  const { setToken, setIsAdmin } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -29,6 +29,7 @@ function Login() {
       .then((response) => response.json())
       .then((data) => {
         setToken(data.token);
+        setIsAdmin(data.is_admin);
         navigate("/");
       });
   };

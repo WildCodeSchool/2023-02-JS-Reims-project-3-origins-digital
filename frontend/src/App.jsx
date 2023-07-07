@@ -26,6 +26,7 @@ function App() {
               />
               <Route path="/search/" element={<Search />} />
               <Route path="/videos/:id" element={<VideoComponent />} />
+              <Route path="/admin" element={<AdminPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
             </Routes>

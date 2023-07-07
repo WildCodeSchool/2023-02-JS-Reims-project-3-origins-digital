@@ -40,7 +40,10 @@ const verifyPassword = (req, res) => {
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "3H",
       });
-      res.json({ token });
+      res.json({
+        token,
+        is_admin: req.user.is_admin,
+      });
     } else {
       res.sendStatus(401);
     }
