@@ -21,7 +21,7 @@ class VideoManager extends AbstractManager {
 
   update(video) {
     return this.database.query(
-      `update ${this.table} set title = ?, description = ?, url = ?, thumbnail_url = ?, time = ?, id_category = ? WHERE id = ?`,
+      `update video set title = ?, description = ?, url = ?, thumbnail_url = ?, time = ?, id_category = ? WHERE id = ?`,
       [
         video.title,
         video.description,
@@ -29,6 +29,7 @@ class VideoManager extends AbstractManager {
         video.thumbnail_url,
         video.time,
         video.id_category,
+        video.id, // Ajoutez la valeur de l'ID à la fin du tableau de paramètres
       ]
     );
   }
