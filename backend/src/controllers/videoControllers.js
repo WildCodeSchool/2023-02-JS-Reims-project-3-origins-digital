@@ -58,7 +58,7 @@ const add = (req, res) => {
   models.video
     .insert(video)
     .then(([result]) => {
-      res.location(`/video/${result.insertId}`).sendStatus(201);
+      res.location(`/videos/${result.insertId}`).sendStatus(201);
     })
     .catch((err) => {
       console.error(err);
