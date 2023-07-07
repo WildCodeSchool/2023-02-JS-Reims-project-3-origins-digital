@@ -25,7 +25,7 @@ function AdminPage() {
   };
 
   return (
-    <div>
+    <>
       <h1>Page administateur</h1>
       <div className="buttonNav">
         <button type="button" onClick={accueil}>
@@ -43,7 +43,7 @@ function AdminPage() {
       </div>
 
       {message && <p>{message}</p>}
-    </div>
+    </>
   );
 }
 

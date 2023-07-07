@@ -138,10 +138,8 @@ button {
 .buttonNav {
   display: flex;
   flex-direction: column;
-  width: 13rem;
-  background-color: whitesmoke;
   gap: 1rem;
-  border-radius: 1rem;
+  align-items: flex-start;
 }
 
 .buttonNav button {
@@ -149,9 +147,12 @@ button {
   align-items: center;
   padding: 2rem;
   border: none;
-  background-color: transparent;
+  background-color: whitesmoke;
   color: black;
   cursor: pointer;
+  border-radius: 1rem;
+  min-width: 25ch;
+  gap: 1rem;
 }
 
 .buttonNav button:hover {
