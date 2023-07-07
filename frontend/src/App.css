@@ -380,3 +380,10 @@ h6 {
   margin: 0 auto;
   padding: 0 20px;
 }
+input {
+  color: #000000;
+}
+
+textarea {
+  color: #000000;
+}
