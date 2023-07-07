@@ -131,13 +131,25 @@ button {
   font-size: xx-large;
 }
 
-.windowsVideo {
-  background-color: #0050c6;
+.video {
+  width: 20rem !important;
+  height: 20rem !important;
 }
 
-.video {
-  height: 10rem;
-  width: 10rem;
+.windowsVideo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.links {
+  gap: 1rem;
+  display: grid;
+  margin: 1rem;
+}
+
+.nameCarousel {
+  text-align: center;
 }
 .buttonNav {
   display: flex;
@@ -170,6 +182,11 @@ button {
   }
   .header {
     flex-direction: row-reverse;
+  }
+
+  .video {
+    width: 50rem !important;
+    height: 40rem !important;
   }
 }
 
@@ -374,7 +391,6 @@ section {
 .formulaire textarea {
   display: block;
   margin-bottom: 40px;
-  color: black;
   border: 0px solid #0d1b4a;
   border-radius: 15px;
   padding: 10px;
