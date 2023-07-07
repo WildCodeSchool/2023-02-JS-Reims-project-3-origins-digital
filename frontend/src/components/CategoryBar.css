@@ -53,5 +53,6 @@
     top: 0;
     left: 0;
     gap: 9rem;
+    width: initial;
   }
 }
