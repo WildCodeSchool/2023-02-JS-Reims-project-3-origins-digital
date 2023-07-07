@@ -45,7 +45,6 @@ CREATE TABLE `like` (
   CONSTRAINT `fk_like_video` FOREIGN KEY (id_video) REFERENCES `video`(id)
 );
 
-
 INSERT INTO category (title) VALUES ('football'),('basketball'),('tennis'),('natation'),('hockey');
 
 INSERT INTO video (title, description, url, thumbnail_url, time, is_public, id_category)

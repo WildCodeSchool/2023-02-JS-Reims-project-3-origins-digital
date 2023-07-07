@@ -9,7 +9,9 @@
 
 * {
   font-family: "Gilroy";
-  color: #ffffff;
+}
+body {
+  color: #fff;
 }
 
 .carousel .slide .legend {
@@ -54,6 +56,7 @@ button {
 
 .header_button {
   text-decoration: none;
+  color: white;
 }
 
 .background {
@@ -147,6 +150,30 @@ button {
 
 .nameCarousel {
   text-align: center;
+}
+.buttonNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.buttonNav button {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  cursor: pointer;
+  border-radius: 1rem;
+  min-width: 25ch;
+  gap: 1rem;
+}
+
+.buttonNav button:hover {
+  background-color: lightslategrey;
+  border-radius: 1rem;
 }
 
 @media (min-width: 768px) {

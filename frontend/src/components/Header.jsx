@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
   const navigate = useNavigate();
-  const { token, setToken } = useAuth();
+  const { token, setToken, isAdmin } = useAuth();
   const [searchVisible, setSearchVisible] = useState(false);
   const [search, setSearch] = useState("");
   const searchButtonRef = useRef(null);
@@ -58,10 +58,14 @@ function Header() {
           Connexion
         </Link>
       )}
+      {isAdmin && (
+        <Link to="/admin" className="header_button">
+          Administration
+        </Link>
+      )}
       <Link to="/">
         <img src={Logo} alt="logo Origins digital" className="headerLogo" />
       </Link>
-
       <div className="search-container">
         <button
           type="button"
