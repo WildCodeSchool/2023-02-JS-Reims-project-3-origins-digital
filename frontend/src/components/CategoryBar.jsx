@@ -10,8 +10,7 @@ function CategoryBar() {
     { name: "Hockey", icon: "sports_hockey" },
   ];
   return (
-    // <nav>
-    <div className="category-bar">
+    <nav className="category-bar">
       {sports.map((sport) => (
         <Link
           key={sport.name}
@@ -22,8 +21,7 @@ function CategoryBar() {
           {sport.name}
         </Link>
       ))}
-    </div>
-    // </nav>
+    </nav>
   );
 }
 export default CategoryBar;
