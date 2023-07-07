@@ -5,7 +5,12 @@ const AuthContext = createContext();
 
 export function AuthContextProvider({ children }) {
   const [token, setToken] = useState();
-  const cachedValue = useMemo(() => ({ token, setToken }), [token]);
+  const [isAdmin, setIsAdmin] = useState();
+
+  const cachedValue = useMemo(
+    () => ({ token, setToken, isAdmin, setIsAdmin }),
+    [token, isAdmin]
+  );
 
   return (
     <AuthContext.Provider value={cachedValue}>{children}</AuthContext.Provider>

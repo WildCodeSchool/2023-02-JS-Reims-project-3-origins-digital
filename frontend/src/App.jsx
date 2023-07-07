@@ -10,6 +10,7 @@ import Home from "./pages/Home";
 import VideoComponent from "./components/VideoComponent";
 import "./App.css";
 import { VideoProvider } from "./contexts/VideoContext";
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
               />
               <Route path="/search/" element={<Search />} />
               <Route path="/videos/:id" element={<VideoComponent />} />
+              <Route path="/admin" element={<AdminPage />} />
               <Route path="/login" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
             </Routes>
