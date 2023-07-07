@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: row;
   position: sticky;
-  top: 0;
   bottom: 0;
-  padding: 1rem;
-  justify-content: space-between;
-  z-index: 50;
+  padding: 1rem 0;
+  justify-content: space-around;
+  background-color: black;
+  width: 100%;
 }
 
 .category-button {
@@ -41,13 +41,17 @@
   color: white;
 }
 
-/* Desktop styles */
 @media (min-width: 768px) {
   .category-bar {
+    display: flex;
+    position: sticky;
+    background-color: transparent;
+    bottom: 0;
+    z-index: 50;
     flex-direction: column;
     top: 0;
     left: 0;
-    padding: 3em;
     gap: 9rem;
+    width: initial;
   }
 }
