@@ -384,6 +384,7 @@ section {
 
 .login {
   background-color: #000000;
+  color: white;
 }
 
 .formulaire input,
@@ -427,6 +428,11 @@ h6 {
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.inscription {
+  color: white;
+}
+
 input {
   color: #000000;
 }
