@@ -14,7 +14,6 @@ function Register() {
     const user = {
       username,
       password,
-      confirmPassword,
       mail,
     };
 

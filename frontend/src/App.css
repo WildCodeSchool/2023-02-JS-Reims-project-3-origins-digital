@@ -123,6 +123,10 @@ button {
   text-align: center;
 }
 
+.logo-f {
+  filter: blur(1.5rem);
+}
+
 .titleCategory {
   font-size: xx-large;
 }
