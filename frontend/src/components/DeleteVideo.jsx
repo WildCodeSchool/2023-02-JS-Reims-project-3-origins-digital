@@ -57,7 +57,7 @@ function DeleteVideo() {
   };
 
   return (
-    <div>
+    <div className="delete-video-container">
       <h1>Page d'administration</h1>
 
       <button type="button" onClick={handleDeleteSelectedVideos}>

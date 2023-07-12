@@ -109,7 +109,7 @@ function EditVideo() {
   };
 
   return (
-    <div>
+    <div className="edit-video-container">
       <h1>Page d'administration</h1>
 
       <div>
