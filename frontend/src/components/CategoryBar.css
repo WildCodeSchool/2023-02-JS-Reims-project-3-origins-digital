@@ -46,12 +46,10 @@
     display: flex;
     position: sticky;
     background-color: transparent;
-    bottom: 0;
-    z-index: 50;
     flex-direction: column;
     top: 0;
     left: 0;
-    gap: 9rem;
     width: initial;
+    max-height: 90vh;
   }
 }

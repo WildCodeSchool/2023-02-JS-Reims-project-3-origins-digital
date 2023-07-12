@@ -13,6 +13,9 @@ import { VideoProvider } from "./contexts/VideoContext";
 import AdminPage from "./pages/AdminPage";
 import { LikedVideosProvider } from "./contexts/LikedVideosContext";
 import LikedVideos from "./pages/LikedVideos";
+import DeleteVideo from "./components/DeleteVideo";
+import EditVideo from "./components/EditVideo";
+import AddVideo from "./components/AddVideo";
 
 function App() {
   return (
@@ -33,6 +36,9 @@ function App() {
                 <Route path="/admin" element={<AdminPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/inscription" element={<Register />} />
+                <Route path="/deletevideos" element={<DeleteVideo />} />
+                <Route path="/editvideos" element={<EditVideo />} />
+                <Route path="/addvideos" element={<AddVideo />} />
                 <Route path="/like" element={<LikedVideos />} />
               </Routes>
             </LikedVideosProvider>
