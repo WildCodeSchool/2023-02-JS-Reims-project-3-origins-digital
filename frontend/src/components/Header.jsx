@@ -58,8 +58,8 @@ function Header() {
           Connexion
         </Link>
       )}
-      {isAdmin && (
-        <Link to="/admin" className="header_button">
+      {isAdmin && token && (
+        <Link to={isAdmin ? "/admin" : "/"} className="header_button">
           Administration
         </Link>
       )}
