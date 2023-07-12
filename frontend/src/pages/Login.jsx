@@ -48,7 +48,9 @@ function Login() {
             <button type="submit">Connexion</button>
 
             <div className="links">
-              <Link to="/inscription">Inscription</Link>
+              <Link className="inscription" to="/inscription">
+                Inscription
+              </Link>
             </div>
           </div>
         </div>
