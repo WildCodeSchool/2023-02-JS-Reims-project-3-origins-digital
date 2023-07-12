@@ -31,16 +31,34 @@ function Home() {
         slideNumber={3}
         videos={suggestedVideos}
         name="Suggestions"
+        d
       />
       <VideoCarousel slideNumber={3} videos={footballVideos} name="Football" />
       <VideoCarousel
         slideNumber={3}
+        false
         videos={basketballVideos}
         name="Basketball"
+        d={false}
       />
-      <VideoCarousel slideNumber={3} videos={tennisVideos} name="Tennis" />
-      <VideoCarousel slideNumber={3} videos={natationVideos} name="Natation" />
-      <VideoCarousel slideNumber={3} videos={hockeyVideos} name="Hockey" />
+      <VideoCarousel
+        slideNumber={3}
+        videos={tennisVideos}
+        name="Tennis"
+        d={false}
+      />
+      <VideoCarousel
+        slideNumber={3}
+        videos={natationVideos}
+        name="Natation"
+        d={false}
+      />
+      <VideoCarousel
+        slideNumber={3}
+        videos={hockeyVideos}
+        name="Hockey"
+        d={false}
+      />
     </div>
   );
 }

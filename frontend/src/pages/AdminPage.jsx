@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { AiFillFileAdd, AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import "../App.css";
 
 function AdminPage() {
   const [message, setMessage] = useState("");
@@ -14,7 +15,7 @@ function AdminPage() {
     <>
       <h1>Page administrateur</h1>
       <div className="buttonNav">
-        <button type="button" onClick={accueil}>
+        <button type="button" className="but-admin-home" onClick={accueil}>
           <AiFillHome size={50} color="black" /> Accueil
         </button>
         <Link to="/addvideos" className="linkButton">

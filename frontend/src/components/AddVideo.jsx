@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../App.css";
 
 function AddVideo() {
   const [title, setTitle] = useState("");
@@ -67,7 +68,7 @@ function AddVideo() {
   };
 
   return (
-    <div>
+    <div className="add-video-container">
       <h2>Ajouter une vidéo</h2>
 
       <div>
