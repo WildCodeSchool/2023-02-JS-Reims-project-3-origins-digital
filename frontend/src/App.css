@@ -207,8 +207,6 @@ section {
   background: #ccc;
   height: 9em;
   text-align: center;
-  font-size: 22px;
-  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -254,7 +252,6 @@ section {
 .footer-distributed .footer-right p {
   display: inline-block;
   vertical-align: top;
-  margin: 1em 3em 0 0;
   color: #ffffff;
 }
 
@@ -268,18 +265,15 @@ section {
   border-radius: 3px;
   box-sizing: border-box;
   background-color: #1f2022;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
   border: none;
   resize: none;
   font: inherit;
-  font-size: 1em;
   font-weight: normal;
   color: #d1d2d2;
   padding: 1em;
 }
 
 .footer-distributed form input {
-  height: 3em;
   margin-bottom: 1em;
 }
 
@@ -295,7 +289,6 @@ section {
   border: 0;
   padding: 1em 4em;
   font-weight: bold;
-  margin-top: 1em;
   cursor: pointer;
 }
 
@@ -306,7 +299,6 @@ section {
 @media (min-width: 768px) {
   .footer-distributed {
     font: bold 14px sans-serif;
-    padding: 30px;
     display: flex;
     justify-content: space-between;
   }
@@ -340,11 +332,6 @@ section {
 
   .footer-distributed .footer-company-name {
     font-size: 12px;
-  }
-
-  .footer-distributed form input,
-  .footer-distributed form textarea {
-    width: 250px;
   }
 
   .footer-distributed form button {
@@ -462,4 +449,185 @@ textarea {
 
 button {
   color: #ffffff;
+}
+
+/* ---- Admin Page ----- */
+
+.linkButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 220px;
+}
+
+.but-admin-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 20px;
+}
+
+.but-admin-home:hover,
+.linkButton:hover {
+  background-color: #d4d4d4;
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.icon-small {
+  font-size: 20px;
+}
+
+/* ---- AddVideo Page ----- */
+
+.add-video-container {
+  max-width: 31.25em;
+  margin: 0 auto;
+  padding: 1.25em;
+  background-color: #000000;
+  border-radius: 0.3125em;
+}
+
+.add-video-container h2 {
+  margin-bottom: 0.9375em;
+  text-align: center;
+}
+
+.add-video-container label {
+  display: block;
+  margin-bottom: 0.3125em;
+}
+
+.add-video-container input,
+.add-video-container textarea {
+  width: 100%;
+  padding: 0.3125em;
+  margin-bottom: 0.625em;
+  border: 0.0625em solid #ccc;
+}
+
+.add-video-container button {
+  display: block;
+  margin: 1.25em auto;
+  padding: 0.625em 1.25em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.add-video-container p {
+  margin-top: 0.625em;
+  text-align: center;
+  color: green;
+}
+
+/* ---- Edit video Page ----- */
+
+.edit-video-container {
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 1.25em;
+  background-color: #000000;
+}
+
+.edit-video-container h1 {
+  text-align: center;
+}
+
+.edit-video-container label {
+  display: block;
+  margin-bottom: 0.3125em;
+}
+
+.edit-video-container input,
+.edit-video-container textarea {
+  width: 100%;
+  padding: 0.3125em;
+  margin-bottom: 0.625em;
+  border: 0.0625em solid #ccc;
+}
+
+.edit-video-container button {
+  display: block;
+  margin: 1.25em auto;
+  padding: 0.625em 1.25em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.edit-video-container p {
+  margin-top: 0.625em;
+  text-align: center;
+  color: green;
+}
+
+.edit-video-container div {
+  margin-bottom: 1.25em;
+}
+
+.edit-video-container span {
+  font-weight: bold;
+}
+
+.edit-video-container input[type="checkbox"] {
+  vertical-align: middle;
+}
+
+/* ---- Edit video Page ----- */
+
+.delete-video-container {
+  max-width: 50em;
+  margin: 0 auto;
+  padding: 1.25em;
+}
+
+.delete-video-container h1 {
+  text-align: center;
+}
+
+.delete-video-container button {
+  display: block;
+  margin: 1.25em auto;
+  padding: 0.625em 1.25em;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.delete-video-container p {
+  margin-top: 0.625em;
+  text-align: center;
+  color: green;
+}
+
+.delete-video-container div {
+  margin-bottom: 0.625em;
+}
+
+.delete-video-container span {
+  font-weight: bold;
+}
+
+.delete-video-container input[type="checkbox"] {
+  vertical-align: middle;
 }
