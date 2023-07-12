@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import { VideoContext } from "../contexts/VideoContext";
 
 function EditVideo() {
-  const [videos, setVideos] = useState([]);
+  const { videos, setVideos } = useContext(VideoContext);
   const [selectedVideos, setSelectedVideos] = useState([]);
   const [updatedVideoData, setUpdatedVideoData] = useState({
     title: "",
@@ -12,26 +13,6 @@ function EditVideo() {
     id_category: "",
   });
   const [message, setMessage] = useState("");
-
-  const fetchVideos = async () => {
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_BACKEND_URL}/videos`
-      );
-      if (response.ok) {
-        const data = await response.json();
-        setVideos(data);
-      } else {
-        throw new Error("Erreur lors de la récupération des vidéos");
-      }
-    } catch (error) {
-      console.error("Erreur lors de la récupération des vidéos :", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchVideos();
-  }, []);
 
   const handleVideoCheckboxChange = (event, videoId) => {
     if (event.target.checked) {
