@@ -11,6 +11,8 @@ import VideoComponent from "./components/VideoComponent";
 import "./App.css";
 import { VideoProvider } from "./contexts/VideoContext";
 import AdminPage from "./pages/AdminPage";
+import { LikedVideosProvider } from "./contexts/LikedVideosContext";
+import LikedVideos from "./pages/LikedVideos";
 
 function App() {
   return (
@@ -19,18 +21,21 @@ function App() {
       <div className="layout background">
         <main className="main">
           <VideoProvider>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/category/:categoryName"
-                element={<CategoryPage />}
-              />
-              <Route path="/search/" element={<Search />} />
-              <Route path="/videos/:id" element={<VideoComponent />} />
-              <Route path="/admin" element={<AdminPage />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/inscription" element={<Register />} />
-            </Routes>
+            <LikedVideosProvider>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route
+                  path="/category/:categoryName"
+                  element={<CategoryPage />}
+                />
+                <Route path="/search/" element={<Search />} />
+                <Route path="/videos/:id" element={<VideoComponent />} />
+                <Route path="/admin" element={<AdminPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/inscription" element={<Register />} />
+                <Route path="/like" element={<LikedVideos />} />
+              </Routes>
+            </LikedVideosProvider>
           </VideoProvider>
         </main>
         <CategoryBar />

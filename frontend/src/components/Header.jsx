@@ -50,9 +50,14 @@ function Header() {
   return (
     <header className="header">
       {token ? (
-        <Link to="/" className="header_button" onClick={handleLogout}>
-          Déconnexion
-        </Link>
+        <>
+          <Link to="/" className="header_button" onClick={handleLogout}>
+            Déconnexion
+          </Link>
+          <Link to="/like" className="header_button" type="button">
+            Vidéos favorites
+          </Link>
+        </>
       ) : (
         <Link to="/login" className="header_button">
           Connexion
