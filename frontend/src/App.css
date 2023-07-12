@@ -207,8 +207,6 @@ section {
   background: #ccc;
   height: 9em;
   text-align: center;
-  font-size: 22px;
-  font-weight: 700;
   text-decoration: underline;
 }
 
@@ -254,7 +252,6 @@ section {
 .footer-distributed .footer-right p {
   display: inline-block;
   vertical-align: top;
-  margin: 1em 3em 0 0;
   color: #ffffff;
 }
 
@@ -268,18 +265,15 @@ section {
   border-radius: 3px;
   box-sizing: border-box;
   background-color: #1f2022;
-  box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
   border: none;
   resize: none;
   font: inherit;
-  font-size: 1em;
   font-weight: normal;
   color: #d1d2d2;
   padding: 1em;
 }
 
 .footer-distributed form input {
-  height: 3em;
   margin-bottom: 1em;
 }
 
@@ -295,7 +289,6 @@ section {
   border: 0;
   padding: 1em 4em;
   font-weight: bold;
-  margin-top: 1em;
   cursor: pointer;
 }
 
@@ -306,7 +299,6 @@ section {
 @media (min-width: 768px) {
   .footer-distributed {
     font: bold 14px sans-serif;
-    padding: 30px;
     display: flex;
     justify-content: space-between;
   }
@@ -340,11 +332,6 @@ section {
 
   .footer-distributed .footer-company-name {
     font-size: 12px;
-  }
-
-  .footer-distributed form input,
-  .footer-distributed form textarea {
-    width: 250px;
   }
 
   .footer-distributed form button {
