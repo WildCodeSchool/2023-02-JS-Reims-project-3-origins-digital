@@ -18,15 +18,12 @@ function CategoryPage() {
   };
 
   const categoryId = categoryNameToIdMap[categoryName];
-  const shuffledVideos = [...videos].sort(() => Math.random() - 0.5);
   const getVideosByCategory = (idCategory) => {
-    let categoryVideos = videos.filter(
+    const categoryVideos = videos.filter(
       (video) => video.id_category === idCategory
     );
-    if (!categoryVideos.length) {
-      categoryVideos = shuffledVideos.slice(0, 15);
-    }
-    return categoryVideos.slice(0, 15);
+
+    return categoryVideos;
   };
 
   const videoElements = getVideosByCategory(categoryId).map((video) =>
