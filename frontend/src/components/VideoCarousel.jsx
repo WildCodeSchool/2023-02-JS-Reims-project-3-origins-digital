@@ -48,7 +48,7 @@ function VideoCarousel({ videos, name, slideNumber, d }) {
               <p className="legend">{video.title}</p>
             </Link>
           ) : (
-            <Link to="/login">
+            <Link key={`${video.id}`} to="/login">
               <img className="logo-f" src={Logo} alt="connecte toi" />
               <p className="legend">
                 pour voir {video.title} il faut se connecter

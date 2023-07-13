@@ -19,13 +19,16 @@ function Register() {
 
     try {
       // Envoyer la requête POST à votre API backend pour enregistrer l'utilisateur
-      const response = await fetch("http://localhost:5001/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(user),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5001"}/users`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(user),
+        }
+      );
 
       if (response.ok) {
         // Réinitialiser les champs du formulaire si l'enregistrement est réussi
