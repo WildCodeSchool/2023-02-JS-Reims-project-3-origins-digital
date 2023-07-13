@@ -1,23 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { FaTrash, FaEdit } from "react-icons/fa";
 import { AiFillFileAdd, AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import "../App.css";
 
 function AdminPage() {
-  const [message, setMessage] = useState("");
-
-  const accueil = () => {
-    setMessage("Accueil");
-  };
-
   return (
     <>
       <h1>Page administrateur</h1>
       <div className="buttonNav">
-        <button type="button" className="but-admin-home" onClick={accueil}>
+        <Link to="/" className="linkButton">
           <AiFillHome size={50} color="black" /> Accueil
-        </button>
+        </Link>
         <Link to="/addvideos" className="linkButton">
           <AiFillFileAdd size={50} color="black" /> Ajouter une vidéo
         </Link>
@@ -28,8 +22,6 @@ function AdminPage() {
           <FaTrash size={50} color="black" /> Supprimer des vidéos
         </Link>
       </div>
-
-      {message && <p>{message}</p>}
     </>
   );
 }

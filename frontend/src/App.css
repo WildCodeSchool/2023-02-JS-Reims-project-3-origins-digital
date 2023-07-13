@@ -160,15 +160,17 @@ button {
 
 .buttonNav button {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding: 2rem;
-  border: none;
-  background-color: whitesmoke;
-  color: black;
+  background-color: #f8f8f8;
+  color: #000000;
+  border: 1px solid #000000;
+  text-decoration: none;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
   border-radius: 1rem;
-  min-width: 25ch;
-  gap: 1rem;
+  width: 20rem;
+  height: 10rem;
 }
 
 .buttonNav button:hover {
@@ -357,9 +359,9 @@ section {
   background-color: #192b6b;
   border-radius: 40px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 50px;
+  padding: 10rem;
   text-align: center;
-  margin: 0 auto;
+  margin: 5rem;
   max-width: 600px;
 }
 
@@ -542,7 +544,7 @@ button {
   max-width: 50em;
   margin: 0 auto;
   padding: 1.25em;
-  background-color: #000000;
+  background-color: transparent;
 }
 
 .edit-video-container h1 {
@@ -576,7 +578,7 @@ button {
 .edit-video-container p {
   margin-top: 0.625em;
   text-align: center;
-  color: green;
+  color: grey;
 }
 
 .edit-video-container div {
@@ -630,4 +632,22 @@ button {
 
 .delete-video-container input[type="checkbox"] {
   vertical-align: middle;
+}
+
+input[type="checkbox"] {
+  /* Réinitialiser les styles par défaut */
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  /* Styles personnalisés */
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 0.5em;
+  background-color: grey;
+  transition: background-color 0.3s ease;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #00ff00;
 }
