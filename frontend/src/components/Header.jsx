@@ -59,7 +59,7 @@ function Header() {
         </Link>
       )}
       {isAdmin && token && (
-        <Link to="/admin" className="header_button">
+        <Link to={isAdmin ? "/admin" : "/"} className="header_button">
           Administration
         </Link>
       )}

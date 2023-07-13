@@ -14,8 +14,11 @@ import AdminPage from "./pages/AdminPage";
 import DeleteVideo from "./components/DeleteVideo";
 import EditVideo from "./components/EditVideo";
 import AddVideo from "./components/AddVideo";
+import { useAuth } from "./contexts/AuthContext";
 
 function App() {
+  const { token, isAdmin } = useAuth();
+
   return (
     <div className="App">
       <Header />
@@ -30,7 +33,12 @@ function App() {
               />
               <Route path="/search/" element={<Search />} />
               <Route path="/videos/:id" element={<VideoComponent />} />
-              <Route path="/admin" element={<AdminPage />} />
+
+              <Route
+                path="admin"
+                element={token && isAdmin ? <AdminPage /> : <Home />}
+              />
+
               <Route path="/login" element={<Login />} />
               <Route path="/inscription" element={<Register />} />
               <Route path="/deletevideos" element={<DeleteVideo />} />
