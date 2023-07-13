@@ -5,7 +5,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 function Header() {
   const navigate = useNavigate();
-  const { token, setToken, isAdmin } = useAuth();
+  const { token, setToken, isAdmin, setIsAdmin } = useAuth();
   const [searchVisible, setSearchVisible] = useState(false);
   const [search, setSearch] = useState("");
   const searchButtonRef = useRef(null);
@@ -44,15 +44,21 @@ function Header() {
 
   const handleLogout = () => {
     setToken(null);
-    navigate("/login");
+    setIsAdmin(false);
+    navigate("/");
   };
 
   return (
     <header className="header">
       {token ? (
-        <Link to="/" className="header_button" onClick={handleLogout}>
+        <button
+          type="button"
+          to="/"
+          className="header_button"
+          onClick={handleLogout}
+        >
           Déconnexion
-        </Link>
+        </button>
       ) : (
         <Link to="/login" className="header_button">
           Connexion

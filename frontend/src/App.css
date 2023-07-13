@@ -57,6 +57,8 @@ button {
 .header_button {
   text-decoration: none;
   color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .background {
