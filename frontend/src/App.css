@@ -125,10 +125,6 @@ button {
   text-align: center;
 }
 
-.logo-f {
-  filter: blur(1.5rem);
-}
-
 .titleCategory {
   font-size: xx-large;
 }
@@ -155,9 +151,9 @@ button {
 }
 .buttonNav {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .buttonNav button {
@@ -204,6 +200,7 @@ button {
   text-align: left;
   padding: 3em 4em 2em;
   position: relative;
+  margin-top: 5rem;
 }
 
 section {
@@ -300,6 +297,27 @@ section {
   width: 5em;
 }
 
+.logo-f {
+  width: 20rem;
+}
+.formulaire {
+  background-color: #192b6b;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+  margin: 3em;
+}
+.formulaire input,
+.formulaire select,
+.formulaire textarea {
+  margin-bottom: 40px;
+  border: 0px solid #0d1b4a;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 16px;
+}
+
 @media (min-width: 768px) {
   .footer-distributed {
     font: bold 14px sans-serif;
@@ -326,6 +344,50 @@ section {
 
   .footer-distributed form button {
     float: none;
+  }
+
+  .linkButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 15rem;
+    height: 7rem;
+  }
+
+  .buttonNav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .formulaire {
+    background-color: #192b6b;
+    border-radius: 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 10rem;
+    text-align: center;
+    margin: 5rem;
+    max-width: 600px;
+  }
+  .formulaire input,
+  .formulaire select,
+  .formulaire textarea {
+    display: block;
+    margin-bottom: 40px;
+    border: 0px solid #0d1b4a;
+    border-radius: 15px;
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
   }
 }
 
@@ -357,16 +419,6 @@ section {
 
 /* ---- FORM LOGIN ----- */
 
-.formulaire {
-  background-color: #192b6b;
-  border-radius: 40px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-  padding: 10rem;
-  text-align: center;
-  margin: 5rem;
-  max-width: 600px;
-}
-
 .formulaire label {
   display: block;
   margin-bottom: 10px;
@@ -376,18 +428,6 @@ section {
 .login {
   background-color: #000000;
   color: white;
-}
-
-.formulaire input,
-.formulaire select,
-.formulaire textarea {
-  display: block;
-  margin-bottom: 40px;
-  border: 0px solid #0d1b4a;
-  border-radius: 15px;
-  padding: 10px;
-  width: 100%;
-  font-size: 16px;
 }
 
 .formulaire button[type="submit"] {
@@ -430,21 +470,6 @@ input {
 
 textarea {
   color: #000000;
-}
-
-.linkButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f8f8f8;
-  color: #000000;
-  border: 1px solid #000000;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-  border-radius: 1rem;
-  width: 20rem;
-  height: 10rem;
 }
 
 .linkButton:hover {
