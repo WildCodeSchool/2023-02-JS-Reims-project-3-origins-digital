@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { Link, Outlet, Route, Routes } from "react-router-dom";
+import { AiFillHome } from "react-icons/ai";
 import Header from "./components/Header";
 import CategoryBar from "./components/CategoryBar";
 import CategoryPage from "./pages/CategoryPage";
@@ -34,16 +35,26 @@ function App() {
               <Route path="/search/" element={<Search />} />
               <Route path="/videos/:id" element={<VideoComponent />} />
 
-              <Route
-                path="admin"
-                element={token && isAdmin ? <AdminPage /> : <Home />}
-              />
-
               <Route path="/login" element={<Login />} />
-              <Route path="/inscription" element={<Register />} />
-              <Route path="/deletevideos" element={<DeleteVideo />} />
-              <Route path="/editvideos" element={<EditVideo />} />
-              <Route path="/addvideos" element={<AddVideo />} />
+              <Route
+                element={
+                  <>
+                    <Link to="/admin" className="linkButton">
+                      <AiFillHome size={50} color="black" /> Accueil
+                    </Link>
+                    <Outlet />
+                  </>
+                }
+              >
+                <Route
+                  path="/admin"
+                  element={token && isAdmin ? <AdminPage /> : <Home />}
+                />
+                <Route path="/inscription" element={<Register />} />
+                <Route path="/deletevideos" element={<DeleteVideo />} />
+                <Route path="/editvideos" element={<EditVideo />} />
+                <Route path="/addvideos" element={<AddVideo />} />
+              </Route>
             </Routes>
           </VideoProvider>
         </main>
