@@ -14,6 +14,10 @@ body {
   color: #fff;
 }
 
+.imgCarousel {
+  opacity: 0.8;
+}
+
 .carousel .slide .legend {
   border-radius: 0 !important;
   bottom: 0 !important;
@@ -28,6 +32,7 @@ body {
   left: 0 !important;
   right: 0 !important;
   width: auto !important;
+  font-size: 17px !important;
 }
 
 body {
@@ -200,7 +205,6 @@ button {
   text-align: left;
   padding: 3em 4em 2em;
   position: relative;
-  margin-top: 5rem;
 }
 
 section {
@@ -299,6 +303,7 @@ section {
 
 .logo-f {
   width: 20rem;
+  opacity: 0.8;
 }
 .formulaire {
   background-color: #192b6b;
@@ -346,6 +351,11 @@ section {
     float: none;
   }
 
+  .adminTitle {
+    display: flex;
+    justify-content: space-around;
+  }
+
   .linkButton {
     display: flex;
     align-items: center;
@@ -366,7 +376,7 @@ section {
     display: flex;
     gap: 1rem;
     justify-content: center;
-    flex-direction: column;
+    margin: 5rem;
   }
 
   .formulaire {

@@ -38,6 +38,7 @@ function Login() {
     <div className="container">
       <form onSubmit={handleSubmit}>
         <div className="formulaire">
+          <p>Connectez-vous</p>
           <label htmlFor="username">Nom d'utilisateur</label>
           <input type="text" id="username" ref={usernameRef} />
 

@@ -44,14 +44,22 @@ function VideoCarousel({ videos, name, slideNumber, d }) {
         {videos.map((video) =>
           video.is_public || (!video.is_public && token) ? (
             <Link key={`${video.id}`} to={`/videos/${video.id}`}>
-              <img src={video.thumbnail_url} alt={video.title} />
+              <img
+                className="imgCarousel"
+                src={video.thumbnail_url}
+                alt={video.title}
+              />
               <p className="legend">{video.title}</p>
             </Link>
           ) : (
-            <Link key={`${video.id}`} to="/login">
+            <Link
+              key={`${video.id}`}
+              to="/login"
+              style={{ textDecoration: "none" }}
+            >
               <img className="logo-f" src={Logo} alt="connecte toi" />
               <p className="legend">
-                pour voir {video.title} il faut se connecter
+                Pour regarder {video.title} il faut se connecter.
               </p>
             </Link>
           )

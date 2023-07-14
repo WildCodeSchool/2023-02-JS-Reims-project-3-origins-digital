@@ -34,7 +34,7 @@ function Search() {
             ) : (
               <Link to="/login">
                 <h2 className="legend">
-                  Pour Voir {video.title} il faut se connecter
+                  Pour regarder {video.title} il faut se connecter.
                 </h2>
                 <img src={Logo} alt="Connecte Toi" className="logo-f" />
               </Link>
