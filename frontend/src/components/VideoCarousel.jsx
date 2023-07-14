@@ -32,7 +32,6 @@ function VideoCarousel({ videos, name, slideNumber, d }) {
         interval={3000}
         transitionTime={500}
         swipeable
-        dynamicHeight
         selectedItem={0}
         emulateTouch
         useKeyboardArrows
