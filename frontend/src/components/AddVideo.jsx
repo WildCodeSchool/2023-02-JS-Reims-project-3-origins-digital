@@ -36,20 +36,23 @@ function AddVideo() {
 
   const handleAddVideo = async () => {
     try {
-      const response = await fetch("http://localhost:5002/videos", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          title,
-          description,
-          url,
-          thumbnail_url: thumbnailUrl,
-          time,
-          id_category: categoryId,
-        }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/videos`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            title,
+            description,
+            url,
+            thumbnail_url: thumbnailUrl,
+            time,
+            id_category: categoryId,
+          }),
+        }
+      );
 
       if (response.ok) {
         setMessage("Vidéo ajoutée avec succès !");
