@@ -71,7 +71,7 @@ function EditVideo() {
     try {
       await Promise.all(
         selectedVideos.map(async (videoId) => {
-          await fetch(`http://localhost:5002/videos/${videoId}`, {
+          await fetch(`${import.meta.env.VITE_BACKEND_URL}/${videoId}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
