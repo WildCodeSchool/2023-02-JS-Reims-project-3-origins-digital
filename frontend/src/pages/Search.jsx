@@ -23,7 +23,11 @@ function Search() {
         <div className="thumbnails-container">
           {resultsVideos.map((video) =>
             video.is_public || (!video.is_public && token) ? (
-              <Link key={`${video.id}`} to={`/videos/${video.id}`}>
+              <Link
+                key={`${video.id}`}
+                to={`/videos/${video.id}`}
+                style={{ textDecoration: "none" }}
+              >
                 <h2 className="legend">{video.title}</h2>
                 <img
                   className="imgCategory"
