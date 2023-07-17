@@ -69,7 +69,7 @@ function AddVideo() {
 
   return (
     <div className="add-video-container">
-      <h2>Ajouter une vidéo</h2>
+      <h1>Ajouter une vidéo</h1>
 
       <div>
         <label htmlFor="title">Titre :</label>

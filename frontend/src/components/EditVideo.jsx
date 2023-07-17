@@ -110,7 +110,7 @@ function EditVideo() {
 
   return (
     <div className="edit-video-container">
-      <h1>Page d'administration</h1>
+      <h1>Modifier une vidéo</h1>
 
       <div>
         <label htmlFor="updatedTitle">Nouveau titre :</label>
