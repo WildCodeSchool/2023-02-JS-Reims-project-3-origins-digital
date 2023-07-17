@@ -19,12 +19,18 @@ function DeleteVideo() {
       // Supprimez les vidéos sélectionnées de la base de données
       await Promise.all(
         selectedVideos.map(async (videoId) => {
-          await fetch(`${import.meta.env.VITE_BACKEND_URL}/videos/${videoId}`, {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          });
+          await fetch(
+            `${
+              import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+            }/videos
+          /${videoId}`,
+            {
+              method: "DELETE",
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          );
         })
       );
 
