@@ -64,14 +64,15 @@ function Header() {
           Connexion
         </Link>
       )}
+      <Link to="/">
+        <img src={Logo} alt="logo Origins digital" className="headerLogo" />
+      </Link>
       {isAdmin && token && (
         <Link to={isAdmin ? "/admin" : "/"} className="header_button">
           Administration
         </Link>
       )}
-      <Link to="/">
-        <img src={Logo} alt="logo Origins digital" className="headerLogo" />
-      </Link>
+
       <div className="search-container">
         <button
           type="button"
