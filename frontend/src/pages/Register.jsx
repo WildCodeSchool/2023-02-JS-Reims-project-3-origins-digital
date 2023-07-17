@@ -50,8 +50,8 @@ function Register() {
 
   return (
     <div className="header-form">
-      <h2>Formulaire d'enregistrement</h2>
       <div className="formulaire">
+        <p>Inscrivez-vous</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Nom d'utilisateur:</label>
           <input
