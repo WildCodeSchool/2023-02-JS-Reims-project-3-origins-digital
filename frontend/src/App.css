@@ -145,6 +145,7 @@ button {
   flex-direction: column;
   align-items: center;
 }
+
 .links {
   gap: 1rem;
   display: grid;
@@ -194,7 +195,24 @@ button {
     height: 40rem !important;
   }
 }
+/* Share container */
 
+.makeStyles-container-1 {
+  color: #ffffff !important;
+  height: auto;
+  outline: none;
+  padding: 80px !important;
+  position: relative;
+  max-width: 568px;
+  min-width: 250px;
+  background: none !important;
+}
+.makeStyles-title-2 {
+  text-align: center !important;
+}
+.makeStyles-iconContainer-3 {
+  text-align: center !important;
+}
 /* ---- FOOTER ----- */
 
 .footer-distributed {
