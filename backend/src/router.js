@@ -12,6 +12,10 @@ const usersControllers = require("./controllers/userControllers");
 
 const videoControllers = require("./controllers/videoControllers");
 
+const categoryControllers = require("./controllers/categoryControllers");
+
+router.get("/categories", categoryControllers.browse);
+
 router.get("/videos", videoControllers.browse);
 router.get("/videos/:id", videoControllers.read);
 router.put("/videos/:id", verifyToken, videoControllers.edit);
