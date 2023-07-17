@@ -323,6 +323,11 @@ section {
   font-size: 16px;
 }
 
+.adminTitle {
+  display: flex;
+  justify-content: space-around;
+}
+
 @media (min-width: 768px) {
   .footer-distributed {
     font: bold 14px sans-serif;
@@ -350,11 +355,6 @@ section {
 
   .footer-distributed form button {
     float: none;
-  }
-
-  .adminTitle {
-    display: flex;
-    justify-content: space-around;
   }
 
   .linkButton {
@@ -542,14 +542,13 @@ button {
   border-radius: 0.3125em;
 }
 
-.add-video-container h2 {
-  margin-bottom: 0.9375em;
-  text-align: center;
-}
-
 .add-video-container label {
   display: block;
   margin-bottom: 0.3125em;
+}
+
+.add-video-container h1 {
+  text-align: center;
 }
 
 .add-video-container input,
@@ -632,8 +631,6 @@ button {
   vertical-align: middle;
 }
 
-/* ---- Edit video Page ----- */
-
 .delete-video-container {
   max-width: 50em;
   margin: 0 auto;
@@ -648,7 +645,7 @@ button {
   display: block;
   margin: 1.25em auto;
   padding: 0.625em 1.25em;
-  background-color: #dc3545;
+  background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 0.3125em;
