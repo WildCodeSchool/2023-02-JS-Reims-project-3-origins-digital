@@ -52,7 +52,6 @@ function EditVideo() {
     try {
       await Promise.all(
         selectedVideos.map(async (videoId) => {
-
           await fetch(
             `${
               import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
@@ -66,7 +65,6 @@ function EditVideo() {
               body: JSON.stringify(updatedVideoData),
             }
           );
-
         })
       );
 
