@@ -1,8 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { VideoContext } from "../contexts/VideoContext";
 
 function EditVideo() {
   const { videos, setVideos } = useContext(VideoContext);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [categories, setCategories] = useState([]);
   const [selectedVideos, setSelectedVideos] = useState([]);
   const [updatedVideoData, setUpdatedVideoData] = useState({
     title: "",
@@ -13,6 +15,27 @@ function EditVideo() {
     id_category: "",
   });
   const [message, setMessage] = useState("");
+  useEffect(() => {
+    fetch(
+      `${
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+      }/categories`
+    )
+      .then((response) => response.json())
+      .then((data) => setCategories(data));
+  }, []);
+
+  const categoryNameToIdMap = {
+    football: 1,
+    basketball: 2,
+    tennis: 3,
+    natation: 4,
+    hockey: 5,
+  };
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
+  };
 
   const handleVideoCheckboxChange = (event, videoId) => {
     if (event.target.checked) {
@@ -97,8 +120,7 @@ function EditVideo() {
 
   return (
     <div className="edit-video-container">
-      <h1>Modifier une vidéo</h1>
-
+      <h1>Page d'administration</h1>
       <div>
         <label htmlFor="updatedTitle">Nouveau titre :</label>
         <input
@@ -109,7 +131,6 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <div>
         <label htmlFor="updatedDescription">Nouvelle description :</label>
         <textarea
@@ -119,7 +140,6 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <div>
         <label htmlFor="updatedUrl">Nouvelle URL :</label>
         <input
@@ -130,7 +150,6 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <div>
         <label htmlFor="updatedThumbnailUrl">Nouvelle URL de vignette :</label>
         <input
@@ -141,7 +160,6 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <div>
         <label htmlFor="updatedTime">Nouveau temps :</label>
         <input
@@ -152,7 +170,6 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <div>
         <label htmlFor="updatedCategoryId">Nouvel ID de catégorie :</label>
         <input
@@ -163,23 +180,37 @@ function EditVideo() {
           onChange={handleFieldChange}
         />
       </div>
-
       <button type="button" onClick={handleUpdateVideos}>
         Modifier les vidéos sélectionnées
       </button>
 
-      {videos.map((video) => (
-        <div key={video.id}>
-          <input
-            type="checkbox"
-            checked={selectedVideos.includes(video.id)}
-            onChange={(e) => handleVideoCheckboxChange(e, video.id)}
-          />
-          <span>{video.title}</span>
-          <p>{video.description}</p>
-        </div>
-      ))}
+      <label htmlFor="choiceCategory">Catégorie :</label>
+      <select value={selectedCategory} onChange={handleCategoryChange}>
+        <option value="">-- toutes les vidéos : --</option>
+        {categories.map((category) => (
+          <option key={category.id} value={category.title}>
+            {category.id} {category.title}
+          </option>
+        ))}
+      </select>
 
+      {videos
+        .filter((video) =>
+          selectedCategory
+            ? video.id_category === categoryNameToIdMap[selectedCategory]
+            : video.id
+        )
+        .map((video) => (
+          <div key={video.id}>
+            <input
+              type="checkbox"
+              checked={selectedVideos.includes(video.id)}
+              onChange={(e) => handleVideoCheckboxChange(e, video.id)}
+            />
+            <span>{video.title}</span>
+            <p>{video.description}</p>
+          </div>
+        ))}
       {message && <p>{message}</p>}
     </div>
   );
