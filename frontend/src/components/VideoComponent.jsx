@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { ShareSocial } from "react-share-social";
 import Logo from "../images/logo RGB Original Digital.png";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -37,6 +38,12 @@ function VideoComponent() {
         allowFullScreen
       />
       <figcaption className="legend">{video.description}</figcaption>
+
+      <ShareSocial
+        title={`Partagez : ${video.title}  avec vos amis sur les réseaux sociaux`}
+        url={`http://localhost:3000/videos/${vidId}`}
+        socialTypes={["facebook", "twitter", "reddit", "whatsapp", "telegram"]}
+      />
     </figure>
   ) : (
     <figure className="windowsVideo">
