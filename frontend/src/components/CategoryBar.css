@@ -51,5 +51,6 @@
     left: 0;
     width: initial;
     max-height: 90vh;
+    min-height: 90vh;
   }
 }

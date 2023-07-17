@@ -41,9 +41,9 @@ function VideoComponent() {
   ) : (
     <figure className="windowsVideo">
       <figcaption className="video">
-        pour visualiser {video.title}, il faut se connecter
+        Pour regarder {video.title}, il faut se connecter.
       </figcaption>
-      <Link to="/login">
+      <Link to="/login" style={{ textDecoration: "none" }}>
         <img className="LogoF" src={Logo} alt="connecte toi" />{" "}
       </Link>
     </figure>
