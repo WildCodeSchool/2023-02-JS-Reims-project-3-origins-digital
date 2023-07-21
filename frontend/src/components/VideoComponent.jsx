@@ -28,7 +28,7 @@ function VideoComponent() {
   }, [vidId]);
   return video.is_public || (!video.is_public && token) ? (
     <figure className="windowsVideo">
-      <figcaption className="legend">{video.title}</figcaption>
+      <figcaption className="legendTitle">{video.title}</figcaption>
       <iframe
         className="video"
         title={video.title}
