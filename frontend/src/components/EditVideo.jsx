@@ -6,15 +6,8 @@ function EditVideo() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [categories, setCategories] = useState([]);
   const [selectedVideos, setSelectedVideos] = useState([]);
-  const [updatedVideoData, setUpdatedVideoData] = useState({
-    title: "",
-    description: "",
-    url: "",
-    thumbnail_url: "",
-    time: "",
-    id_category: "",
-  });
   const [message, setMessage] = useState("");
+
   useEffect(() => {
     fetch(
       `${
@@ -39,80 +32,54 @@ function EditVideo() {
 
   const handleVideoCheckboxChange = (event, videoId) => {
     if (event.target.checked) {
-      setSelectedVideos([videoId]);
-      const selectedVideo = videos.find((video) => video.id === videoId);
-      setUpdatedVideoData((prevData) => ({
-        ...prevData,
-        title: selectedVideo.title,
-        description: selectedVideo.description,
-        url: selectedVideo.url,
-        thumbnail_url: selectedVideo.thumbnail_url,
-        time: selectedVideo.time,
-        id_category: selectedVideo.id_category.toString(),
-      }));
+      setSelectedVideos((prevSelectedVideos) => [
+        ...prevSelectedVideos,
+        videoId,
+      ]);
     } else {
-      setSelectedVideos([]);
-      setUpdatedVideoData({
-        title: "",
-        description: "",
-        url: "",
-        thumbnail_url: "",
-        time: "",
-        id_category: "",
-      });
+      setSelectedVideos((prevSelectedVideos) =>
+        prevSelectedVideos.filter((id) => id !== videoId)
+      );
     }
   };
 
-  const handleFieldChange = (event) => {
+  const handleFieldChange = (event, videoId) => {
     const { name, value } = event.target;
-    setUpdatedVideoData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+    setVideos((prevVideos) =>
+      prevVideos.map((video) => {
+        if (video.id === videoId) {
+          return {
+            ...video,
+            [name]: value,
+          };
+        }
+        return video;
+      })
+    );
   };
 
   const handleUpdateVideos = async () => {
     try {
       await Promise.all(
         selectedVideos.map(async (videoId) => {
+          const selectedVideo = videos.find((video) => video.id === videoId);
           await fetch(
             `${
               import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-            }/videos
-          /${videoId}`,
+            }/videos/${videoId}`,
             {
               method: "PUT",
               headers: {
                 "Content-Type": "application/json",
               },
-              body: JSON.stringify(updatedVideoData),
+              body: JSON.stringify(selectedVideo),
             }
           );
         })
       );
 
-      setVideos((prevVideos) =>
-        prevVideos.map((video) => {
-          if (selectedVideos.includes(video.id)) {
-            return {
-              ...video,
-              ...updatedVideoData,
-            };
-          }
-          return video;
-        })
-      );
-
       setSelectedVideos([]);
-      setUpdatedVideoData({
-        title: "",
-        description: "",
-        url: "",
-        thumbnail_url: "",
-        time: "",
-        id_category: "",
-      });
-      setMessage("Vidéo modifiée avec succès !");
+      setMessage("Vidéos modifiées avec succès !");
     } catch (error) {
       console.error("Erreur lors de la modification des vidéos :", error);
     }
@@ -121,69 +88,6 @@ function EditVideo() {
   return (
     <div className="edit-video-container">
       <h1>Page d'administration</h1>
-      <div>
-        <label htmlFor="updatedTitle">Nouveau titre :</label>
-        <input
-          type="text"
-          id="updatedTitle"
-          name="title"
-          value={updatedVideoData.title}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="updatedDescription">Nouvelle description :</label>
-        <textarea
-          id="updatedDescription"
-          name="description"
-          value={updatedVideoData.description}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="updatedUrl">Nouvelle URL :</label>
-        <input
-          type="text"
-          id="updatedUrl"
-          name="url"
-          value={updatedVideoData.url}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="updatedThumbnailUrl">Nouvelle URL de vignette :</label>
-        <input
-          type="text"
-          id="updatedThumbnailUrl"
-          name="thumbnail_url"
-          value={updatedVideoData.thumbnail_url}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="updatedTime">Nouveau temps :</label>
-        <input
-          type="text"
-          id="updatedTime"
-          name="time"
-          value={updatedVideoData.time}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="updatedCategoryId">Nouvel ID de catégorie :</label>
-        <input
-          type="text"
-          id="updatedCategoryId"
-          name="id_category"
-          value={updatedVideoData.id_category}
-          onChange={handleFieldChange}
-        />
-      </div>
-      <button type="button" onClick={handleUpdateVideos}>
-        Modifier les vidéos sélectionnées
-      </button>
-
       <label htmlFor="choiceCategory">Catégorie :</label>
       <select value={selectedCategory} onChange={handleCategoryChange}>
         <option value="">-- toutes les vidéos : --</option>
@@ -209,8 +113,35 @@ function EditVideo() {
             />
             <span>{video.title}</span>
             <p>{video.description}</p>
+            <div>
+              <label htmlFor={`updatedTitle_${video.id}`}>
+                Nouveau titre :
+              </label>
+              <input
+                type="text"
+                id={`updatedTitle_${video.id}`}
+                name="title"
+                value={video.title}
+                onChange={(e) => handleFieldChange(e, video.id)}
+              />
+            </div>
+            <div>
+              <label htmlFor={`updatedDescription_${video.id}`}>
+                Nouvelle description :
+              </label>
+              <textarea
+                id={`updatedDescription_${video.id}`}
+                name="description"
+                value={video.description}
+                onChange={(e) => handleFieldChange(e, video.id)}
+              />
+            </div>
+            {/* Add other fields for updating video data */}
           </div>
         ))}
+      <button type="button" onClick={handleUpdateVideos}>
+        Modifier les vidéos sélectionnées
+      </button>
       {message && <p>{message}</p>}
     </div>
   );
