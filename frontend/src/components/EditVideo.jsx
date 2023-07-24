@@ -79,7 +79,7 @@ function EditVideo() {
       );
 
       setSelectedVideos([]);
-      setMessage("Vidéos modifiées avec succès !");
+      setMessage("Vidéo modifiée avec succès!");
       setTimeout(() => {
         setMessage("");
       }, 2000);
@@ -91,7 +91,7 @@ function EditVideo() {
   return (
     <div className="edit-video-container">
       <div className="category-section">
-        <h1>Page d'administration</h1>
+        <h1>Modifier une vidéo</h1>
         <label htmlFor="choiceCategory">Catégorie :</label>
         <select
           className="selectCategory"
@@ -108,7 +108,7 @@ function EditVideo() {
 
         <div className="action-section">
           <button type="button" onClick={handleUpdateVideos}>
-            Modifier les vidéos sélectionnées
+            Modifier vidéo sélectionnée
           </button>
           {message && <p>{message}</p>}
         </div>

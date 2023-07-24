@@ -69,6 +69,9 @@ function AddVideo() {
       } else {
         throw new Error("Erreur lors de l'ajout de la vidéo");
       }
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     } catch (error) {
       console.error("Erreur lors de l'ajout de la vidéo :", error);
     }
@@ -128,7 +131,7 @@ function AddVideo() {
       </div>
 
       <button type="button" onClick={handleAddVideo}>
-        Ajouter la vidéo
+        Ajouter vidéo
       </button>
 
       {message && <p>{message}</p>}

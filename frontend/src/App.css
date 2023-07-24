@@ -3,16 +3,6 @@
   src: url(../Fonts/Gilroy-ExtraBold.otf);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Gilroy";
-  src: url(../Fonts/Gilroy-ExtraBold.otf);
-}
-
 * {
   font-family: "Gilroy";
   text-decoration: none;
@@ -486,15 +476,6 @@ section {
   background-color: #0050c6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: sans-serif;
-}
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -564,11 +545,9 @@ button {
 /* ---- AddVideo Page ----- */
 
 .add-video-container {
-  max-width: 31.25em;
+  max-width: 32em;
   margin: 0 auto;
   padding: 1.25em;
-  background-color: #000000;
-  border-radius: 0.3125em;
 }
 
 .add-video-container label {
@@ -603,6 +582,7 @@ button {
   margin-top: 0.625em;
   text-align: center;
   color: green;
+  background-color: transparent;
 }
 
 /* ---- Edit video Page ----- */
@@ -639,6 +619,7 @@ button {
   border: none;
   border-radius: 0.3125em;
   cursor: pointer;
+  margin-bottom: 2rem;
 }
 
 .edit-video-container p {
@@ -668,6 +649,18 @@ button {
 
 .edit-video-container input[type="checkbox"] {
   vertical-align: middle;
+}
+
+.deletebutton {
+  display: block;
+  margin: 1.25em auto;
+  padding: 0.625em 1.25em;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+  float: right;
 }
 
 .delete-video-container {
