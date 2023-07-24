@@ -42,7 +42,7 @@ function VideoComponent() {
       setIsURLCopied(true);
       setTimeout(() => {
         setIsURLCopied(false);
-      }, 100000000000);
+      }, 2000);
     });
   };
 
