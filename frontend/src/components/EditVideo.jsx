@@ -80,7 +80,6 @@ function EditVideo() {
 
       setSelectedVideos([]);
       setMessage("Vidéos modifiées avec succès !");
-      // Effacer le message après 2 secondes
       setTimeout(() => {
         setMessage("");
       }, 2000);
