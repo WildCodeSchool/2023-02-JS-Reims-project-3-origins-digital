@@ -220,6 +220,14 @@ button {
   text-decoration: none;
   border: none;
 }
+.SocialLinkButton {
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
 /* ---- FOOTER ----- */
 
 .footer-distributed {

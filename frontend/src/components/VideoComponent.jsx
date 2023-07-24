@@ -42,7 +42,7 @@ function VideoComponent() {
       setIsURLCopied(true);
       setTimeout(() => {
         setIsURLCopied(false);
-      }, 2000);
+      }, 100000000000);
     });
   };
 
@@ -110,15 +110,22 @@ function VideoComponent() {
         </a>
         <button
           type="button"
-          className="SocialLink"
+          className="SocialLinkButton"
           onClick={handleCopyLink}
           style={{ marginLeft: "auto" }}
         >
           <MdContentCopy />{" "}
         </button>
         {isURLCopied && (
-          <span style={{ marginLeft: "8px", fontSize: "14px" }}>
-            URL copiée dans le presse-papiers !
+          <span
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginTop: "8px",
+              fontSize: "14px",
+            }}
+          >
+            URL copiée dans le presse-papiers.
           </span>
         )}
       </div>
