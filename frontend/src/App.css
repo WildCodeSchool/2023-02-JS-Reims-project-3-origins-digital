@@ -9,6 +9,7 @@
 
 * {
   font-family: "Gilroy";
+  text-decoration: none;
 }
 body {
   color: #fff;
@@ -121,6 +122,16 @@ button {
   text-align: center;
 }
 
+.legendTitle {
+  border-radius: 1rem;
+  background: whitesmoke;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  margin: 1rem;
+  font-size: larger;
+}
+
 .legend {
   border-radius: 1rem;
   background: whitesmoke;
@@ -128,6 +139,7 @@ button {
   padding: 10px;
   font-size: 12px;
   text-align: center;
+  margin: 1rem;
 }
 
 .titleCategory {
@@ -195,23 +207,26 @@ button {
     height: 40rem !important;
   }
 }
-/* Share container */
+.SocialLinks {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
 
-.makeStyles-container-1 {
-  color: #ffffff !important;
-  height: auto;
-  outline: none;
-  padding: 80px !important;
-  position: relative;
-  max-width: 568px;
-  min-width: 250px;
-  background: none !important;
+.SocialLink {
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  border: none;
 }
-.makeStyles-title-2 {
-  text-align: center !important;
-}
-.makeStyles-iconContainer-3 {
-  text-align: center !important;
+.SocialLinkButton {
+  margin: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
 }
 /* ---- FOOTER ----- */
 
@@ -253,7 +268,7 @@ section {
 }
 
 .footer-distributed .footer-company-name {
-  color: #8f9296;
+  color: white;
   font-size: 1em;
   font-weight: normal;
   margin: 0;
@@ -367,10 +382,6 @@ section {
     margin-top: 30px;
   }
 
-  .footer-distributed form {
-    display: block;
-  }
-
   .footer-distributed form button {
     float: none;
   }
@@ -418,20 +429,6 @@ section {
     padding: 10px;
     width: 100%;
     font-size: 16px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .footer-distributed {
-    font: bold 14px sans-serif;
-  }
-
-  .footer-distributed .footer-company-name {
-    font-size: 12px;
-  }
-
-  .footer-distributed form button {
-    padding: 10px 35px;
   }
 }
 

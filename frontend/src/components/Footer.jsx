@@ -10,16 +10,6 @@ function Footer() {
           alt="logo"
         />
       </h3>
-      <p className="footer-links">
-        <a href="#home"> Home </a> .{" "}
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://www.euromediagroup.com/terms"
-        >
-          Terms & conditions
-        </a>
-      </p>
       <p className="footer-company-name">
         Company Name © 2013 - 2021 Origins. All rights reserved
       </p>

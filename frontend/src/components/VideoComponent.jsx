@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { ShareSocial } from "react-share-social";
+import {
+  FaTwitter,
+  FaFacebook,
+  FaInstagram,
+  FaRedditAlien,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { MdContentCopy } from "react-icons/md";
 import Logo from "../images/logo RGB Original Digital.png";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -9,6 +16,7 @@ function VideoComponent() {
 
   const [video, setVideo] = useState([]);
   const { id: vidId } = useParams();
+  const [isURLCopied, setIsURLCopied] = useState(false);
 
   useEffect(() => {
     fetch(
@@ -27,9 +35,20 @@ function VideoComponent() {
         );
       });
   }, [vidId]);
+
+  const handleCopyLink = () => {
+    const url = `${window.location.origin}/video/${vidId}`;
+    navigator.clipboard.writeText(url).then(() => {
+      setIsURLCopied(true);
+      setTimeout(() => {
+        setIsURLCopied(false);
+      }, 2000);
+    });
+  };
+
   return video.is_public || (!video.is_public && token) ? (
     <figure className="windowsVideo">
-      <figcaption className="legend">{video.title}</figcaption>
+      <figcaption className="legendTitle">{video.title}</figcaption>
       <iframe
         className="video"
         title={video.title}
@@ -38,12 +57,78 @@ function VideoComponent() {
         allowFullScreen
       />
       <figcaption className="legend">{video.description}</figcaption>
-
-      <ShareSocial
-        title={`Partagez : ${video.title}  avec vos amis sur les réseaux sociaux`}
-        url={`http://localhost:3000/videos/${vidId}`}
-        socialTypes={["facebook", "twitter", "reddit", "whatsapp", "telegram"]}
-      />
+      <div className="SocialLinks">
+        <a
+          href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+            `${window.location.origin}/video/${vidId}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
+          <FaTwitter />
+        </a>
+        <a
+          href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+            `${window.location.origin}/video/${vidId}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
+          <FaFacebook />
+        </a>
+        <a
+          href={`https://www.instagram.com/?url=${encodeURIComponent(
+            `${window.location.origin}/video/${vidId}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
+          <FaInstagram />
+        </a>
+        <a
+          href={`https://reddit.com/submit?url=${encodeURIComponent(
+            `${window.location.origin}/video/${vidId}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
+          <FaRedditAlien />
+        </a>
+        <a
+          href={`https://api.whatsapp.com/send?text=${encodeURIComponent(
+            `${window.location.origin}/video/${vidId}`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="SocialLink"
+        >
+          <FaWhatsapp />
+        </a>
+        <button
+          type="button"
+          className="SocialLinkButton"
+          onClick={handleCopyLink}
+          style={{ marginLeft: "auto" }}
+        >
+          <MdContentCopy />{" "}
+        </button>
+        {isURLCopied && (
+          <span
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginTop: "8px",
+              fontSize: "14px",
+            }}
+          >
+            URL copiée dans le presse-papiers.
+          </span>
+        )}
+      </div>
     </figure>
   ) : (
     <figure className="windowsVideo">
