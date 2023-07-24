@@ -6,16 +6,19 @@ export const VideoContext = createContext();
 export function VideoProvider({ children }) {
   const [videos, setVideos] = useState([]);
 
-  useEffect(() => {
+  const fetchVideos = () => {
     fetch(
       `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/videos`
     )
       .then((response) => response.json())
       .then((data) => setVideos(data));
+  };
+  useEffect(() => {
+    fetchVideos();
   }, []);
 
   const value = useMemo(() => {
-    return { videos, setVideos };
+    return { videos, setVideos, fetchVideos };
   }, [videos]);
 
   return (
