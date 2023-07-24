@@ -15,6 +15,7 @@ function DeleteVideo() {
       setSelectedVideos(selectedVideos.filter((id) => id !== videoId));
     }
   };
+
   useEffect(() => {
     fetch(
       `${
@@ -24,6 +25,7 @@ function DeleteVideo() {
       .then((response) => response.json())
       .then((data) => setCategories(data));
   }, []);
+
   const categoryNameToIdMap = {
     football: 1,
     basketball: 2,
@@ -31,12 +33,13 @@ function DeleteVideo() {
     natation: 4,
     hockey: 5,
   };
+
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
+
   const handleDeleteSelectedVideos = async () => {
     try {
-      // Supprimez les vidéos sélectionnées de la base de données
       await Promise.all(
         selectedVideos.map(async (videoId) => {
           await fetch(
@@ -53,10 +56,12 @@ function DeleteVideo() {
         })
       );
 
-      // Mettez à jour l'état des vidéos après la suppression
       setVideos(videos.filter((video) => !selectedVideos.includes(video.id)));
       setSelectedVideos([]);
-      setMessage("Vidéos supprimées !");
+      setMessage("Vidéo supprimée !");
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     } catch (error) {
       console.error("Erreur lors de la suppression des vidéos :", error);
     }
@@ -66,18 +71,29 @@ function DeleteVideo() {
     <div className="delete-video-container">
       <h1>Supprimer une vidéo</h1>
 
-      <button type="button" onClick={handleDeleteSelectedVideos}>
-        Supprimer les vidéos sélectionnées
-      </button>
-      <label htmlFor="choiceCategory">Catégorie :</label>
-      <select value={selectedCategory} onChange={handleCategoryChange}>
-        <option value="">-- toutes les vidéos : --</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.title}>
-            {category.id} {category.title}
-          </option>
-        ))}
-      </select>
+      <div className="filter-section">
+        <label htmlFor="choiceCategory">Catégorie :</label>
+        <select
+          className="selectCategory"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          <option value="">-- Toutes les vidéos : --</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.title}>
+              {category.id} {category.title}
+            </option>
+          ))}
+        </select>
+
+        <button
+          type="button"
+          className="deletebutton"
+          onClick={handleDeleteSelectedVideos}
+        >
+          Supprimer vidéo sélectionnée
+        </button>
+      </div>
 
       {videos
         .filter((video) =>
