@@ -80,6 +80,9 @@ function EditVideo() {
 
       setSelectedVideos([]);
       setMessage("Vidéos modifiées avec succès !");
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
     } catch (error) {
       console.error("Erreur lors de la modification des vidéos :", error);
     }
@@ -87,62 +90,70 @@ function EditVideo() {
 
   return (
     <div className="edit-video-container">
-      <h1>Page d'administration</h1>
-      <label htmlFor="choiceCategory">Catégorie :</label>
-      <select value={selectedCategory} onChange={handleCategoryChange}>
-        <option value="">-- toutes les vidéos : --</option>
-        {categories.map((category) => (
-          <option key={category.id} value={category.title}>
-            {category.id} {category.title}
-          </option>
-        ))}
-      </select>
+      <div className="category-section">
+        <h1>Page d'administration</h1>
+        <label htmlFor="choiceCategory">Catégorie :</label>
+        <select
+          className="selectCategory"
+          value={selectedCategory}
+          onChange={handleCategoryChange}
+        >
+          <option value="">-- Toutes les vidéos : --</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.title}>
+              {category.id} {category.title}
+            </option>
+          ))}
+        </select>
 
-      {videos
-        .filter((video) =>
-          selectedCategory
-            ? video.id_category === categoryNameToIdMap[selectedCategory]
-            : video.id
-        )
-        .map((video) => (
-          <div key={video.id}>
-            <input
-              type="checkbox"
-              checked={selectedVideos.includes(video.id)}
-              onChange={(e) => handleVideoCheckboxChange(e, video.id)}
-            />
-            <span>{video.title}</span>
-            <p>{video.description}</p>
-            <div>
-              <label htmlFor={`updatedTitle_${video.id}`}>
-                Nouveau titre :
-              </label>
+        <div className="action-section">
+          <button type="button" onClick={handleUpdateVideos}>
+            Modifier les vidéos sélectionnées
+          </button>
+          {message && <p>{message}</p>}
+        </div>
+
+        {videos
+          .filter((video) =>
+            selectedCategory
+              ? video.id_category === categoryNameToIdMap[selectedCategory]
+              : video.id
+          )
+          .map((video) => (
+            <div className="onceVideo" key={video.id}>
               <input
-                type="text"
-                id={`updatedTitle_${video.id}`}
-                name="title"
-                value={video.title}
-                onChange={(e) => handleFieldChange(e, video.id)}
+                type="checkbox"
+                checked={selectedVideos.includes(video.id)}
+                onChange={(e) => handleVideoCheckboxChange(e, video.id)}
               />
+              <span>{video.title}</span>
+              <h5>{video.description}</h5>
+              <div>
+                <label htmlFor={`updatedTitle_${video.id}`}>
+                  Nouveau titre :
+                </label>
+                <input
+                  type="text"
+                  id={`updatedTitle_${video.id}`}
+                  name="title"
+                  value={video.title}
+                  onChange={(e) => handleFieldChange(e, video.id)}
+                />
+              </div>
+              <div>
+                <label htmlFor={`updatedDescription_${video.id}`}>
+                  Nouvelle description :
+                </label>
+                <textarea
+                  id={`updatedDescription_${video.id}`}
+                  name="description"
+                  value={video.description}
+                  onChange={(e) => handleFieldChange(e, video.id)}
+                />
+              </div>
             </div>
-            <div>
-              <label htmlFor={`updatedDescription_${video.id}`}>
-                Nouvelle description :
-              </label>
-              <textarea
-                id={`updatedDescription_${video.id}`}
-                name="description"
-                value={video.description}
-                onChange={(e) => handleFieldChange(e, video.id)}
-              />
-            </div>
-            {/* Add other fields for updating video data */}
-          </div>
-        ))}
-      <button type="button" onClick={handleUpdateVideos}>
-        Modifier les vidéos sélectionnées
-      </button>
-      {message && <p>{message}</p>}
+          ))}
+      </div>
     </div>
   );
 }
