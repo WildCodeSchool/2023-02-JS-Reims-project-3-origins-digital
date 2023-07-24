@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import Logo from "../images/logo RGB Original Digital.png";
 
-function VideoCarousel({ videos, name, slideNumber, d }) {
+function VideoCarousel({ videos, name, slideNumber }) {
   const { token } = useAuth();
 
   const [slideNum, setSlideNum] = useState(slideNumber);
@@ -28,7 +28,7 @@ function VideoCarousel({ videos, name, slideNumber, d }) {
         showIndicators={false}
         infiniteLoop
         showThumbs={false}
-        autoPlay={d}
+        autoPlay={false}
         interval={3000}
         transitionTime={500}
         swipeable
@@ -81,7 +81,6 @@ VideoCarousel.propTypes = {
   ).isRequired,
   name: PropTypes.string.isRequired,
   slideNumber: PropTypes.number.isRequired,
-  d: PropTypes.bool.isRequired,
 };
 
 export default VideoCarousel;

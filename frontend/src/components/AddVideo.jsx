@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "../App.css";
+import { VideoContext } from "../contexts/VideoContext";
 
 function AddVideo() {
+  const { fetchVideos } = useContext(VideoContext);
+
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [url, setUrl] = useState("");
@@ -62,6 +65,7 @@ function AddVideo() {
         setThumbnailUrl("");
         setTime("");
         setCategoryId("");
+        fetchVideos();
       } else {
         throw new Error("Erreur lors de l'ajout de la vidéo");
       }

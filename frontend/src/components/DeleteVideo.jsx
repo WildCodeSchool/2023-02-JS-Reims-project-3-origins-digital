@@ -18,7 +18,7 @@ function DeleteVideo() {
   useEffect(() => {
     fetch(
       `${
-        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5002"
       }/categories`
     )
       .then((response) => response.json())
@@ -41,9 +41,8 @@ function DeleteVideo() {
         selectedVideos.map(async (videoId) => {
           await fetch(
             `${
-              import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-            }/videos
-          /${videoId}`,
+              import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5002"
+            }/videos/${videoId}`,
             {
               method: "DELETE",
               headers: {
