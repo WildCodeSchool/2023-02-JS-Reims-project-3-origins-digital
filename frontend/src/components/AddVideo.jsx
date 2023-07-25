@@ -58,7 +58,7 @@ function AddVideo() {
       );
 
       if (response.ok) {
-        setMessage("Vidéo ajoutée avec succès !");
+        setMessage("Vidéo ajoutée!");
         setTitle("");
         setDescription("");
         setUrl("");

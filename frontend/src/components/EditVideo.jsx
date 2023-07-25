@@ -79,7 +79,7 @@ function EditVideo() {
       );
 
       setSelectedVideos([]);
-      setMessage("Vidéo modifiée avec succès!");
+      setMessage("Vidéo modifiée!");
       setTimeout(() => {
         setMessage("");
       }, 2000);

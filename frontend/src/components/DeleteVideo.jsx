@@ -58,7 +58,7 @@ function DeleteVideo() {
 
       setVideos(videos.filter((video) => !selectedVideos.includes(video.id)));
       setSelectedVideos([]);
-      setMessage("Vidéo supprimée !");
+      setMessage("Vidéo supprimée!");
       setTimeout(() => {
         setMessage("");
       }, 2000);
@@ -85,14 +85,17 @@ function DeleteVideo() {
             </option>
           ))}
         </select>
-
-        <button
-          type="button"
-          className="deletebutton"
-          onClick={handleDeleteSelectedVideos}
-        >
-          Supprimer vidéo sélectionnée
-        </button>
+        <div className="action-section">
+          {" "}
+          <button
+            type="button"
+            className="deletebutton"
+            onClick={handleDeleteSelectedVideos}
+          >
+            Supprimer vidéo sélectionnée
+          </button>
+          {message && <p>{message}</p>}
+        </div>
       </div>
 
       {videos
@@ -111,8 +114,6 @@ function DeleteVideo() {
             <span>{video.title}</span>
           </div>
         ))}
-
-      {message && <p>{message}</p>}
     </div>
   );
 }

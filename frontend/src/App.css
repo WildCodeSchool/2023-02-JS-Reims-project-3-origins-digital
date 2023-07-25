@@ -619,7 +619,6 @@ button {
   border: none;
   border-radius: 0.3125em;
   cursor: pointer;
-  margin-bottom: 2rem;
 }
 
 .edit-video-container p {
@@ -641,6 +640,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  float: right;
 }
 
 .edit-video-container span {
@@ -653,7 +653,6 @@ button {
 
 .deletebutton {
   display: block;
-  margin: 1.25em auto;
   padding: 0.625em 1.25em;
   background-color: #007bff;
   color: #fff;
